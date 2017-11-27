@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.hemaapp.tyyjsc.view.AutoHeightViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/hm_banner_def" />
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:text=""/>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_gravity="bottom"
+        android:background="#dfdfdf" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_20">
+
+        <TextView
+            android:id="@+id/tab_limit_buy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/index_top_tuijian"
+            android:gravity="center"
+            android:text="精品推荐"
+            android:textColor="#686868"
+            android:textSize="@dimen/textsize_6" />
+
+        <TextView
+            android:id="@+id/tab_value_book"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/index_qianggou"
+            android:gravity="center"
+            android:text="预售抢购"
+            android:textColor="#686868"
+            android:textSize="@dimen/textsize_6" />
+
+        <TextView
+            android:id="@+id/tab_value_meal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/index_top_yuding"
+            android:gravity="center"
+            android:text="特价预定"
+            android:textColor="#686868"
+            android:textSize="@dimen/textsize_6" />
+
+        <TextView
+            android:id="@+id/tab_save_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/index_top_taocan"
+            android:gravity="center"
+            android:text="套餐专区"
+            android:textColor="#686868"
+            android:textSize="@dimen/textsize_6" />
+
+        <TextView
+            android:id="@+id/tab_member_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="3dp"
+            android:drawableTop="@mipmap/index_top_member"
+            android:gravity="center"
+            android:text="会员专区"
+            android:textColor="#686868"
+            android:textSize="@dimen/textsize_6" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="#dfdfdf" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:src="@color/background"
+        android:contentDescription="@string/contentDescription"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_gravity="bottom"
+        android:background="#dfdfdf" />
+
+    <LinearLayout
+        android:id="@+id/tuijian_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@mipmap/index_tuijian_left"
+            android:drawablePadding="10dp"
+            android:drawableRight="@mipmap/index_tuijian_right"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="精品推荐"
+            android:textColor="@color/index_search_bg"
+            android:textSize="@dimen/textsize_8" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/tuijian_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@mipmap/hm_banner_def"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginRight="15dp">
+
+                <LinearLayout
+                    android:id="@+id/layout_good_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/img_good_0"
+                        android:layout_width="120dp"
+                        android:layout_height="90dp"
+                        android:background="@mipmap/hm_icon_def"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tv_name_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:ellipsize="end"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:maxLines="1"
+                        android:text="麻辣美味辣条"
+                        android:textColor="@color/txt_color"
+                        android:textSize="@dimen/txt_size_6" />
+
+                    <TextView
+                        android:id="@+id/tv_price_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="¥0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txt_size_7" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_good_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/img_good_1"
+                        android:layout_width="120dp"
+                        android:layout_height="90dp"
+                        android:background="@mipmap/hm_icon_def"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tv_name_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:ellipsize="end"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:maxLines="1"
+                        android:text="麻辣美味辣条"
+                        android:textColor="@color/txt_color"
+                        android:textSize="@dimen/txt_size_6" />
+
+                    <TextView
+                        android:id="@+id/tv_price_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="¥0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txt_size_7" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.hemaapp.tyyjsc.view.CityGridView
+            android:id="@+id/grid_tuijian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:numColumns="3"
+            android:horizontalSpacing="5dp"
+            android:verticalSpacing="5dp"
+            android:scrollbars="none"
+            android:listSelector="@color/transparent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/yushou_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:src="@mipmap/index_yushou_top" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_toRightOf="@+id/left"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/time_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/index_time_bg"
+                android:gravity="center"
+                android:paddingLeft="@dimen/margin_8"
+                android:paddingRight="@dimen/margin_8"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_size_7"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@mipmap/index_time_line" />
+
+            <TextView
+                android:id="@+id/time_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/index_time_bg"
+                android:gravity="center"
+                android:paddingLeft="@dimen/margin_8"
+                android:paddingRight="@dimen/margin_8"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_size_7"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@mipmap/index_time_line" />
+
+            <TextView
+                android:id="@+id/time_s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/index_time_bg"
+                android:gravity="center"
+                android:paddingLeft="@dimen/margin_8"
+                android:paddingRight="@dimen/margin_8"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_size_7"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/yushou_grid"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/yushou_ln"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="#666666"
+                android:padding="10dp"
+                android:src="@mipmap/index_toright" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_gravity="bottom"
+        android:background="#dfdfdf" />
+
+    <LinearLayout
+        android:id="@+id/tejia_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/index_tejia" />
+
+            <TextView
+                android:id="@+id/tv_tejia_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="15dp"
+                android:text="更多>"
+                android:textColor="@color/cl_a1a0a0"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <com.hemaapp.tyyjsc.view.CityGridView
+            android:id="@+id/grid_tejia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:numColumns="3"
+            android:horizontalSpacing="5dp"
+            android:verticalSpacing="5dp"
+            android:scrollbars="none"
+            android:listSelector="@color/transparent"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_gravity="bottom"
+        android:background="#dfdfdf" />
+
+    <LinearLayout
+        android:id="@+id/taocan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/index_taocan_topimg" />
+
+            <TextView
+                android:id="@+id/tv_taocan_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="15dp"
+                android:text="更多>"
+                android:textColor="@color/cl_a1a0a0"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/taocan_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/huiyuan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/index_huiyuan" />
+
+            <TextView
+                android:id="@+id/tv_member_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="15dp"
+                android:text="更多>"
+                android:textColor="@color/cl_a1a0a0"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <com.hemaapp.tyyjsc.view.CityGridView
+            android:id="@+id/grid_member"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:numColumns="3"
+            android:horizontalSpacing="5dp"
+            android:verticalSpacing="5dp"
+            android:scrollbars="none"
+            android:listSelector="@color/transparent"/>
+
+    </LinearLayout>
+</LinearLayout>

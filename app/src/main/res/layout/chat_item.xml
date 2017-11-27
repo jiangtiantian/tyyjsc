@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hemaapp.tyyjsc.view.ScrollLinerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="恭喜你成功"
+                android:maxLines="2"
+                android:textColor="#444444"
+                android:textSize="@dimen/textsize_7"/>
+            <ImageView
+                android:id="@+id/dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@+id/name"
+                android:layout_toRightOf="@+id/name"
+                android:src="@mipmap/index_new_top"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/textsize_6"/>
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/name"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="3dp"
+                android:text="2015-05-21 14:30"
+                android:textColor="#a7a7a7"
+                android:textSize="@dimen/textsize_7"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/bg_tab_n"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/del_tv"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/index_search_bg"
+        android:contentDescription="@null"
+        android:gravity="center"
+        android:padding="7dip"
+        android:scaleType="center"
+        android:text="删除"
+        android:textColor="#FFF"
+        android:textSize="@dimen/textsize_8"/>
+
+</com.hemaapp.tyyjsc.view.ScrollLinerLayout>

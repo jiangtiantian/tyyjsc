@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/base_bg_color"
+              android:orientation="vertical">
+
+    <include layout="@layout/bar_layout"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/login_ly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_30"
+                   >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:drawableEnd="@mipmap/index_toright"
+                        android:drawableRight="@mipmap/index_toright"
+                        android:gravity="center_vertical"
+                        android:text="@string/hm_hlxs_txt_28"
+                        android:textColor="@color/label_txt_color"
+                        android:textSize="@dimen/txt_size_8"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:background="#dfdfdf"/>
+
+                <LinearLayout
+                    android:id="@+id/forget_pwd_ly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_30">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:drawableEnd="@mipmap/index_toright"
+                        android:drawableRight="@mipmap/index_toright"
+                        android:gravity="center_vertical"
+                        android:text="@string/hm_hlxs_txt_29"
+                        android:textColor="@color/label_txt_color"
+                        android:textSize="@dimen/txt_size_8"/>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:background="#dfdfdf"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_gravity="top"
+                android:background="#dfdfdf"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_gravity="bottom"
+                android:background="#dfdfdf"/>
+        </FrameLayout>
+    </ScrollView>
+
+</LinearLayout>

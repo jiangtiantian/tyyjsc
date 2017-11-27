@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_layout" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5C6375"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/order_all_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_15"
+                android:paddingTop="@dimen/margin_15"
+                android:text="全部"
+                android:textColor="@color/order_tab_selector"
+                android:textSize="@dimen/txt_size_8" />
+
+            <RadioButton
+                android:id="@+id/order_dfk_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_15"
+                android:paddingTop="@dimen/margin_15"
+                android:text="待付款"
+                android:textColor="@color/order_tab_selector"
+                android:textSize="@dimen/txt_size_8" />
+
+            <RadioButton
+                android:id="@+id/order_dfh_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_15"
+                android:paddingTop="@dimen/margin_15"
+                android:text="待发货"
+                android:textColor="@color/order_tab_selector"
+                android:textSize="@dimen/txt_size_8" />
+
+            <RadioButton
+                android:id="@+id/order_dsh_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_15"
+                android:paddingTop="@dimen/margin_15"
+                android:text="待收货"
+                android:textColor="@color/order_tab_selector"
+                android:textSize="@dimen/txt_size_8" />
+
+            <RadioButton
+                android:id="@+id/order_dpj_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_15"
+                android:paddingTop="@dimen/margin_15"
+                android:text="待评价"
+                android:textColor="@color/order_tab_selector"
+                android:textSize="@dimen/txt_size_8" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/tabcontainer"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0.8dp"
+            android:background="#5C6375"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/tab"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/base_bg_color"
+              android:orientation="vertical">
+
+    <include layout="@layout/bar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fadeScrollbars="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/firstPwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical"
+                            android:hint="密码"
+                            android:inputType="textPassword"
+                            android:padding="@dimen/margin_30"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/label_txt_color"
+                            android:textColorHint="@color/goods_gray"
+                            android:textSize="@dimen/textsize_8"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_gravity="top"
+                        android:background="#dfdfdf"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_gravity="bottom"
+                        android:background="#dfdfdf"/>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/secondPwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical"
+                            android:hint="确认新密码"
+                            android:inputType="textPassword"
+                            android:padding="@dimen/margin_30"
+                            android:singleLine="true"
+                            android:textColor="@color/label_txt_color"
+                            android:textColorHint="@color/goods_gray"
+                            android:textSize="@dimen/textsize_8"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_gravity="top"
+                        android:background="#dfdfdf"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_gravity="bottom"
+                        android:background="#dfdfdf"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/pwdBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_70"
+                    android:layout_marginRight="@dimen/margin_70"
+                    android:layout_marginTop="@dimen/margin_100"
+                    android:padding="10dp"
+                    android:background="@drawable/dialog_btn_selector"
+                    android:text="确定"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_8"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

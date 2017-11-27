@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/id_city"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:drawableRight="@mipmap/index_city_down"
+        android:gravity="center"
+        android:text="济南市"
+        android:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/index_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/id_city"
+        android:layout_weight="1"
+        android:background="@drawable/index_search_shape"
+        android:drawableLeft="@mipmap/index_search"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:hint="输入关键词进行搜索"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/index_et_hint_color"
+        android:textSize="@dimen/txt_size_8" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/image_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/hm_lsw_btn_selector"
+            android:clickable="true">
+
+            <ImageButton
+                android:id="@+id/news"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_20"
+                android:background="@null"
+                android:clickable="false"
+                android:gravity="center_horizontal"
+                android:src="@mipmap/index_news" />
+
+            <ImageView
+                android:id="@+id/dots"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_gravity="top|end"
+                android:layout_marginRight="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_15"
+                android:clickable="false"
+                android:gravity="center"
+                android:src="@mipmap/index_new_top" />
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/image_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/hm_lsw_btn_selector"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:src="@mipmap/custom_service" />
+    </LinearLayout>
+</LinearLayout>
+

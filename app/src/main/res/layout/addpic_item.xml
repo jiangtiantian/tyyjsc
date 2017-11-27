@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+
+        <ImageButton
+            android:id="@+id/share_addimg3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/hm_icon_img_add"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop" />
+
+        <com.hemaapp.hm_FrameWork.view.RoundedImageView
+            android:id="@+id/share_addimg4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/hm_icon_img_add"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/pic_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@mipmap/hm_pic_del"
+            android:contentDescription="@null"
+            android:visibility="gone"
+            android:padding="@dimen/margin_10"
+            android:background="@color/transparent"/>
+    </FrameLayout>
+
+</LinearLayout>

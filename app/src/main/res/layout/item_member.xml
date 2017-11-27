@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:descendantFocusability= "blocksDescendants"
+    android:layout_height="120dp">
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_imageView"
+            android:layout_centerInParent="true"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5"
+        android:paddingRight="@dimen/fab_margin">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:maxEms="24"
+            android:maxLines="2"
+            android:lines="2"
+            android:text="dfgsdfg"
+            android:textColor="@color/result_view"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_shale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="5dp"
+            android:text="已售244" />
+
+        <TextView
+            android:id="@+id/tv_kucun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_shale"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/tv_shale"
+            android:text="库存456" />
+
+        <TextView
+            android:id="@+id/tv_dianjuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_shale"
+            android:layout_marginTop="5dp"
+            android:text="98点券"
+            android:textColor="@color/result_view" />
+
+        <Button
+            android:id="@+id/btn_rightAway"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/tv_dianjuan"
+            android:layout_alignParentRight="true"
+            android:background="#3FA601"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="立即兑换"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

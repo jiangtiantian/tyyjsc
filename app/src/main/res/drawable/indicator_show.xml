@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 登录按钮样式 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@mipmap/dot_red" android:state_pressed="true"/>
+    <item android:drawable="@mipmap/dot_red" android:state_focused="true"/>
+    <item android:drawable="@mipmap/dot_red" android:state_checked="true"/>
+    <item android:drawable="@mipmap/dot_no"/>
+
+</selector>

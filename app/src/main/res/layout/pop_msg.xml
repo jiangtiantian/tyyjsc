@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:src="#60000000" />
+
+    <LinearLayout        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"      
+        android:padding="@dimen/margin_40"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/father"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:orientation="vertical"
+            android:background="@drawable/pop_corner">
+
+            <TextView
+               android:id="@+id/clear_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_5"
+                android:gravity="center"
+                android:padding="@dimen/margin_25"
+                android:text="清空"
+                android:textColor="#ff4500"
+                android:textSize="@dimen/textsize_8" />
+			<View 
+			    android:layout_width="match_parent"
+			    android:layout_height="0.6dp"
+			    android:background="#dfdfdf"
+			    android:layout_marginLeft="10dp"
+			    android:layout_marginStart="10dp"
+			    android:layout_marginRight="10dp"
+			    android:layout_marginEnd="10dp"/>
+            <TextView
+                 android:id="@+id/set_readed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"                
+                android:gravity="center"
+                android:padding="@dimen/margin_25"
+                android:text="全部设为已读"
+                android:textColor="#3f3f3f"
+                android:textSize="@dimen/textsize_8" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_25"
+            android:background="@drawable/pop_corner"
+            android:gravity="center"
+            android:padding="@dimen/margin_25"
+            android:text="取消"
+            android:textColor="#3f3f3f"
+            android:textSize="@dimen/textsize_8" />
+    </LinearLayout>
+
+</FrameLayout>

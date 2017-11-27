@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_layout" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:src="@color/line_color" />
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/goods_img"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/hm_icon_def" />
+
+                <TextView
+                    android:id="@+id/goods_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/goods_img"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="商品名字"
+                    android:textColor="@color/label_txt_color"
+                    android:textSize="@dimen/txt_size_8" />
+
+                <TextView
+                    android:id="@+id/goods_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/goods_img"
+                    android:layout_alignLeft="@+id/goods_name"
+                    android:text="¥0"
+                    android:textColor="@color/index_search_bg"
+                    android:textSize="@dimen/txt_size_8" />
+
+                <TextView
+                    android:id="@+id/goods_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/goods_price"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/goods_price"
+                    android:text="x 0"
+                    android:textColor="@color/code"
+                    android:textSize="@dimen/txt_size_7" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/margin_40"
+                android:paddingTop="@dimen/margin_40">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="商品评价"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_8" />
+
+                <GridView
+                    android:id="@+id/star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:listSelector="@color/transparent"
+                    android:numColumns="5"
+                    android:scrollbars="none" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/bg_tab_n" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_20">
+
+                <FrameLayout
+                    android:id="@+id/cm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/advice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:gravity="start"
+                        android:hint="请输入您的评价内容（限140字）"
+                        android:maxLength="140"
+                        android:maxLines="7"
+                        android:minLines="6"
+                        android:textColor="#555555"
+                        android:textColorHint="#afafaf"
+                        android:textSize="@dimen/txt_size_8" />
+
+                    <TextView
+                        android:id="@+id/num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:gravity="center"
+                        android:minWidth="@dimen/margin_110"
+                        android:text="0/140"
+                        android:textColor="@color/label_txt_color"
+                        android:textSize="@dimen/textsize_7" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cm"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:background="@color/bg_tab_n" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="添加图片（最多4张）" />
+
+                    <com.hemaapp.tyyjsc.view.CityGridView
+                        android:id="@+id/imggridview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:horizontalSpacing="5dp"
+                        android:verticalSpacing="10dp"
+                        android:background="@color/white"
+                        android:listSelector="@color/transparent"
+                        android:numColumns="4"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:src="@color/line_color"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginTop="10dp"
+                android:src="@color/line_color"/>
+
+            <!--是否接收提送消息-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="匿名评论"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt_color"/>
+
+                <ToggleButton
+                    android:id="@+id/togglebutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:button="@drawable/togglebutton"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:checked="false"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginBottom="15dp"
+                android:src="@color/line_color"/>
+            
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

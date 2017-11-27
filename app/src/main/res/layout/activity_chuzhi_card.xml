@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_layout"/>
+        <LinearLayout
+            android:id="@+id/header_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/margin_20"
+            android:paddingTop="@dimen/margin_20">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_20"
+                android:text="当前余额"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_7"/>
+            <TextView
+                android:id="@+id/countfee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_9"/>
+        </LinearLayout>
+
+    <com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout
+        android:id="@+id/refreshLoadmoreLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <xtom.frame.view.XtomListView
+            android:id="@+id/users"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@color/transparent"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none"/>
+    </com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout>
+    <TextView
+        android:id="@+id/buy_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@color/index_search_bg"
+        android:text="购买记录"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textSize="@dimen/textsize_8"
+        />
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/conversion_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/base_bg_color"
+            android:orientation="vertical">
+
+            <com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout
+                android:id="@+id/refreshLoadmoreLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <xtom.frame.view.XtomListView
+                                android:id="@+id/vouchers"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:cacheColorHint="@color/transparent"
+                                android:divider="@color/transparent"
+                                android:listSelector="@color/transparent"
+                                android:scrollbars="none" />
+
+                            <LinearLayout
+                                android:id="@+id/usedlayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <include layout="@layout/vocher_divider" />
+
+                                <xtom.frame.view.XtomListView
+                                    android:id="@+id/used_vouchers"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:cacheColorHint="@color/transparent"
+                                    android:divider="@color/transparent"
+                                    android:listSelector="@color/transparent"
+                                    android:scrollbars="none" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/empty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawablePadding="15dp"
+                            android:gravity="center"
+                            android:text="@string/hm_hlxs_txt_9"
+                            android:textColor="#959595"
+                            android:textSize="@dimen/textsize_7"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </ScrollView>
+            </com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/conversion_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#3FA601"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/conversion" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="兑换"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_size_9" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

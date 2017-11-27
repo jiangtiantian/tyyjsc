@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "com.hemaapp.tyyjsc"
+        minSdkVersion 9
+        targetSdkVersion 21
+        multiDexEnabled true
+        versionCode 1000
+        versionName "1.0.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                GETUI_APP_ID : "G2Oy2Y8I4z5OLLPzO5LTe6",
+                GETUI_APP_KEY : "cZPNwbEYex62eGea56VxSA",
+                GETUI_APP_SECRET : "jwC6hs4v1XAaosYCY1wzk8"
+        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    testCompile 'junit:junit:4.12'
+    compile project(':hm_framework_source')
+    compile files('libs/SocialSDK_Sina.jar')
+    compile files('libs/alipaySdk-20151215.jar')
+    compile files('libs/weiboSDKCore_3.1.4.jar')
+    compile 'com.android.support:multidex:1.0.1'
+    compile files('libs/SocialSDK_WeiXin_Full.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_tool.jar')
+    compile files('libs/umeng_integrate_tool.jar')
+    compile files('libs/SocialSDK_QQ_Simplify.jar')
+    compile files('libs/UPPayAssistEx.jar')
+    compile files('libs/AMap_Location_V3.3.0_20170118.jar')
+    compile files('libs/GetuiSDK2.10.2.0.jar')
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+    compile 'com.android.support:design:25.0.1'
+}

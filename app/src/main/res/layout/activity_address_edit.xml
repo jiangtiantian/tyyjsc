@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_layout" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:src="@color/line_color" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/base_bg_color"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/deal_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/hm_hlxs_txt_39"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/txt_size_8" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end|center_vertical"
+                    android:background="@color/transparent"
+                    android:focusable="true"
+                    android:gravity="end"
+                    android:hint="@string/hm_hlxs_txt_41"
+                    android:inputType="text"
+                    android:maxLength="12"
+                    android:padding="10dp"
+                    android:textColor="#383838"
+                    android:textColorHint="#afafaf"
+                    android:textSize="@dimen/txt_size_7" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/bg_tab_n" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/hm_hlxs_txt_42"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/txt_size_8" />
+
+                <EditText
+                    android:id="@+id/tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/hm_hlxs_txt_43"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:padding="10dp"
+                    android:textColor="#383838"
+                    android:textColorHint="#afafaf"
+                    android:textSize="@dimen/txt_size_7" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/bg_tab_n" />
+
+            <LinearLayout
+                android:id="@+id/my_bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/hm_hlxs_txt_44"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/txt_size_8" />
+
+                <EditText
+                    android:id="@+id/sn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/transparent"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/hm_hlxs_txt_45"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textColor="#383838"
+                    android:textColorHint="#afafaf"
+                    android:textSize="@dimen/txt_size_7" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/bg_tab_n"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/hm_hlxs_txt_46"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/txt_size_8" />
+
+                <TextView
+                    android:id="@+id/area"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/transparent"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/hm_hlxs_txt_47"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="#383838"
+                    android:textColorHint="#afafaf"
+                    android:textSize="@dimen/txt_size_7" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/bg_tab_n" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:padding="10dp"
+                        android:text="@string/hm_hlxs_txt_48"
+                        android:textColor="#383838"
+                        android:textSize="@dimen/txt_size_8" />
+
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:gravity="start"
+                        android:hint="@string/hm_hlxs_txt_49"
+                        android:maxLines="7"
+                        android:minLines="6"
+                        android:paddingBottom="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingStart="10dp"
+                        android:textColor="#555555"
+                        android:textColorHint="#afafaf"
+                        android:textSize="@dimen/txt_size_8" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_gravity="bottom"
+                    android:background="#dfdfdf" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

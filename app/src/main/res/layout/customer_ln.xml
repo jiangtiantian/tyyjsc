@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA">
+    <include layout="@layout/bar_layout"/>
+    <LinearLayout
+        android:id="@+id/contact_qq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:padding="@dimen/margin_30">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:drawableLeft="@mipmap/contact_qq"
+            android:drawableStart="@mipmap/contact_qq"
+            android:drawableEnd="@mipmap/index_toright"
+            android:drawableRight="@mipmap/index_toright"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:text="客服QQ"
+            android:textColor="@color/label_txt_color"
+            android:textSize="@dimen/txt_size_8"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginStart="@dimen/margin_30"
+        android:background="#dfdfdf"/>
+    <LinearLayout
+        android:id="@+id/contact_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/margin_30">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:drawableLeft="@mipmap/contact_phone"
+            android:drawableStart="@mipmap/contact_phone"
+            android:drawableEnd="@mipmap/index_toright"
+            android:drawableRight="@mipmap/index_toright"
+            android:gravity="center_vertical"
+            android:text="客服电话"
+            android:drawablePadding="10dp"
+            android:textColor="@color/label_txt_color"
+            android:textSize="@dimen/txt_size_8"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginStart="@dimen/margin_30"
+        android:background="#dfdfdf"/>
+</LinearLayout>

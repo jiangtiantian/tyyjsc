@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F8F8F8">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/cn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/margin_10"
+            android:paddingLeft="@dimen/margin_20"
+            android:paddingTop="@dimen/margin_10">
+
+            <com.hemaapp.tyyjsc.view.CusImageView
+                android:id="@+id/item_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/hm_icon_def"/>
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/item_img"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="麻辣美味辣条"
+                android:textColor="@color/txt_color"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/attr_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/item_img"
+                android:layout_below="@+id/item_name"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:maxLines="1"
+                android:text="规格："
+                android:textColor="@color/goods_gray"
+                android:textSize="12sp"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/attr_name"
+                android:layout_toRightOf="@+id/item_img">
+                <LinearLayout
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/item_salenum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="已售0件"
+                            android:textColor="@color/code"
+                            android:textSize="@dimen/txt_size_6"/>
+
+                        <TextView
+                            android:id="@+id/item_stock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="库存0"
+                            android:textColor="@color/code"
+                            android:textSize="@dimen/txt_size_6"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/opt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/goods_price"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/cancel_shape"
+                android:text="申请退款"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="@dimen/textsize_6"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

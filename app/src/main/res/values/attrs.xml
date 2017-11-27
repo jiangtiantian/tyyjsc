@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="dialog">
+        <attr
+            name="timeColor"
+            format="reference"/>
+        <attr
+            name="timeDotColor"
+            format="reference"/>
+        <attr
+            name="timeBgColor"
+            format="reference"/>
+    </declare-styleable>
+    <!--下拉刷新的相关-->
+    <declare-styleable name="CirCleRefreshLayout">
+        <attr name="AniBackColor" format="color" />
+        <attr name="AniForeColor" format="color" />
+        <attr name="CircleSmaller" format="integer"/>
+    </declare-styleable>
+</resources>

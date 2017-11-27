@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/base_bg_color"
+              android:orientation="vertical">
+    <include layout="@layout/bar_layout"/>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/logo_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="我的头像"
+                    android:textColor="@color/label_txt_color"
+                    android:textSize="@dimen/textsize_8" />
+
+                <com.hemaapp.hm_FrameWork.view.RoundedImageView
+                    android:id="@+id/logo"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/bg_tab_n" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="@dimen/margin_40"
+                android:background="@color/bg_tab_n" />
+
+            <LinearLayout
+                android:id="@+id/nick_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingBottom="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_15"
+                    android:text="昵称"
+                    android:textColor="@color/label_txt_color"
+                    android:textSize="@dimen/txt_size_8" />
+
+                <EditText
+                    android:id="@+id/nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:background="@color/transparent"
+                    android:gravity="end"
+                    android:hint="昵称"
+                    android:inputType="text"
+                    android:maxLength="6"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textColor="#383838"
+                    android:textColorHint="#afafaf"
+                    android:textSize="@dimen/txt_size_8" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/bg_tab_n" />
+
+            <LinearLayout
+                android:id="@+id/sex_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingBottom="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_15"
+                    android:text="性别"
+                    android:textColor="@color/label_txt_color"
+                    android:textSize="@dimen/txt_size_8" />
+
+                <TextView
+                    android:id="@+id/sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/transparent"
+                    android:drawablePadding="3dp"
+                    android:drawableRight="@mipmap/index_toright"
+                    android:gravity="end|center_vertical"
+                    android:text=""
+                    android:textColor="@color/goods_gray"
+                    android:textSize="@dimen/txt_size_8" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/bg_tab_n" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/selectaddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收件人: 王小丫"
+            android:textColor="@color/label_txt_color"
+            android:textSize="@dimen/textsize_7.5" />
+
+        <TextView
+            android:id="@+id/tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/name"
+            android:layout_toRightOf="@+id/name"
+            android:text="电话: 13200000000"
+            android:textColor="@color/label_txt_color"
+            android:textSize="@dimen/textsize_7.5" />
+
+        <ImageView
+            android:id="@+id/opt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tel"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:src="@mipmap/address_uncheck" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="5dp"
+            android:text="山东省济南市高新区玉兰广场"
+            android:textColor="@color/goods_gray"
+            android:textSize="@dimen/textsize_7.5" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/bg_tab_n" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingEnd="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="1dp">
+
+        <TextView
+            android:id="@+id/def"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/address_uncheck"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_10"
+            android:text="默认地址"
+            android:textColor="@color/goods_gray"
+            android:textSize="@dimen/textsize_6.5" />
+
+        <TextView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/remove"
+            android:drawableLeft="@mipmap/address_edit"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="编辑"
+            android:textColor="@color/goods_gray"
+            android:textSize="@dimen/textsize_6.5" />
+
+        <TextView
+            android:id="@+id/remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/address_delete"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="删除"
+            android:textColor="@color/goods_gray"
+            android:textSize="@dimen/textsize_6.5" />
+    </RelativeLayout>
+
+</LinearLayout>

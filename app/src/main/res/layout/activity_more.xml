@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/account_ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_30">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:drawableEnd="@mipmap/index_toright"
+                            android:drawableRight="@mipmap/index_toright"
+                            android:gravity="center_vertical"
+                            android:text="账户管理"
+                            android:textColor="@color/label_txt_color"
+                            android:textSize="@dimen/txt_size_8" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_marginLeft="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:background="#dfdfdf" />
+
+                    <LinearLayout
+                        android:id="@+id/contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_30">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:drawableEnd="@mipmap/index_toright"
+                            android:drawableRight="@mipmap/index_toright"
+                            android:gravity="center_vertical"
+                            android:text="联系客服"
+                            android:textColor="@color/label_txt_color"
+                            android:textSize="@dimen/txt_size_8" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_marginLeft="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:background="#dfdfdf" />
+
+                    <LinearLayout
+                        android:id="@+id/advice_ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_30">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:drawableEnd="@mipmap/index_toright"
+                            android:drawableRight="@mipmap/index_toright"
+                            android:gravity="center_vertical"
+                            android:text="意见反馈"
+                            android:textColor="@color/label_txt_color"
+                            android:textSize="@dimen/txt_size_8" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_marginLeft="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:background="#dfdfdf" />
+
+                    <LinearLayout
+                        android:id="@+id/software_share_ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_30">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:drawableEnd="@mipmap/index_toright"
+                            android:drawableRight="@mipmap/index_toright"
+                            android:gravity="center_vertical"
+                            android:text="分享软件"
+                            android:textColor="@color/label_txt_color"
+                            android:textSize="@dimen/txt_size_8" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_marginLeft="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:background="#dfdfdf" />
+
+                    <FrameLayout
+                        android:id="@+id/cache_ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_30">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:text="清除缓存"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/txt_size_8" />
+
+                        <TextView
+                            android:id="@+id/cache_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:drawableEnd="@mipmap/index_toright"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@mipmap/index_toright"
+                            android:gravity="center_vertical|end"
+                            android:text="0M"
+                            android:textColor="@color/label_txt_color"
+                            android:textSize="@dimen/txt_size_6" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_marginLeft="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_30"
+                        android:background="#dfdfdf" />
+
+                    <LinearLayout
+                        android:id="@+id/about_ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_30">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="false"
+                            android:drawableEnd="@mipmap/index_toright"
+                            android:drawableRight="@mipmap/index_toright"
+                            android:gravity="center_vertical"
+                            android:text="关于软件"
+                            android:textColor="@color/label_txt_color"
+                            android:textSize="@dimen/txt_size_8" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_gravity="top"
+                    android:background="#dfdfdf" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_gravity="bottom"
+                    android:background="#dfdfdf" />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/dialog_btn_selector"
+                android:padding="10dp"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_size_8" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

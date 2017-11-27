@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="bg">#EAEAEA</color>
+    <color name="statusbar_bg">#803a3a3a</color>
+    <color name="sex">#3f3f3f</color>
+    <color name="neighbor">#3a3a3a</color>
+    <color name="code">#939393</color>
+
+    <!-- 我的 -->
+    <color name="black">#000000</color>
+    <!-- 提现记录 -->
+    <color name="draw">#7cf7f2</color>
+    <!-- 交易记录 -->
+    <color name="deal">#f44500</color>
+    <color name="blue">#90f9f3</color>
+
+    <!-- 红色 -->
+    <color name="sort_txt_p">#f44500</color>
+    <!-- 黑色 -->
+    <color name="sort_txt_n">#383838</color>
+    <!-- 白色 -->
+    <color name="sort_bg_white">#FFFFFF</color>
+    <!-- bg -->
+    <color name="sort_bg_black">#f0f0f0</color>
+    <color name="province_line_border">#FFAFAFAF</color>
+    <color name="transparent">#00000000</color>
+    <color name="background">#f5f5f5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="title">#f15c3b</color>
+    <color name="main_n">#8b8b8b</color>
+    <color name="main_p">#fe8649</color>
+    <color name="xian">#dcdcdc</color>
+    <color name="word_black">#6c6c6c</color>
+    <color name="set_hui">#a0a0a0</color>
+    <color name="pwd_hui">#d5d5d5</color>
+    <color name="fenlei_sel">#f7f7f7</color>
+    <color name="title_hui">#959595</color>
+    <color name="city_sel">#a0a0a0</color>
+    <color name="shop_hui1">#808080</color>
+    <color name="shop_hui2">#444444</color>
+    <color name="map_pop_sel">#f1f1f1</color>
+    <color name="empty">#a0a0a0</color>
+    <color name="type_normal">#9d9d9d</color>
+    <color name="qianhui">#b8b8b8</color>
+    <color name="hui">#979797</color>
+    <color name="shenhui">#777777</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#c0000000</color>
+    <color name="possible_result_points">#c0F15C3B</color>
+    <color name="zise">#F15C3B</color>
+    <color name="scan_hui">#9B9B9B</color>
+    <color name="notice_hui">#424242</color>
+    <color name="green">#699B28</color>
+    <color name="status_hong">#e2302e</color>
+    <color name="status_hui">#878787</color>
+    <color name="custom_header_text">#85B100</color>
+    <color name="custom_selected">#A8D324</color>
+    <color name="custom_background">#F0F8DB</color>
+    <color name="custom_background_today">#FF9105</color>
+    <color name="custom_background_disabled">#F0F8DB</color>
+    <color name="custom_text_selected">#FFFFFFFF</color>
+    <color name="custom_text_inactive">#7f778088</color>
+    <color name="calendar_active_month_bg">#fff5f7f9</color>
+    <color name="calendar_bg">#ffffffff</color>
+    <!-- <color name="calendar_divider">#ffbababa</color> -->
+    <color name="calendar_inactive_month_bg">#ffd7d9db</color>
+    <color name="calendar_selected_day_bg">#ff379bff</color>
+    <color name="calendar_highlighted_day_bg">#ccffcc</color>
+    <!-- <color name="calendar_selected_range_bg">#ff96caff</color> -->
+    <color name="calendar_selected_range_bg">#fffeded6</color>
+    <color name="calendar_text_inactive">#40778088</color>
+    <color name="calendar_text_active">#896565</color>
+    <color name="calendar_text_active1">#896565</color>
+    <color name="calendar_text_selected">#ffffffff</color>
+    <color name="calendar_text_unselectable">#7f778088</color>
+    <color name="timebackground">#D5D9DF</color>
+    <color name="timeline">#BDC1C7</color>
+
+
+    <!-- 滚动条渐变 -->
+    <!-- 透明色 -->
+    <drawable name="my_transparent">#00FFFFFF</drawable>
+    <!-- 渐变颜色（白色） -->
+    <drawable name="my_white0">#F3F3F3</drawable>
+    <drawable name="my_white1">#10FFFFFF</drawable>
+    <drawable name="my_white2">#20FFFFFF</drawable>
+    <drawable name="my_white3">#30FFFFFF</drawable>
+    <drawable name="my_white4">#40FFFFFF</drawable>
+    <drawable name="my_white5">#50FFFFFF</drawable>
+    <drawable name="my_white6">#60FFFFFF</drawable>
+    <drawable name="my_white7">#70FFFFFF</drawable>
+    <drawable name="my_white8">#80FFFFFF</drawable>
+    <drawable name="my_white9">#90FFFFFF</drawable>
+    <drawable name="my_white10">#AAFFFFFF</drawable>
+
+    <drawable name="my_white11">#BEFFFFFF</drawable>
+    <drawable name="my_white12">#EEFFFFFF</drawable>
+    <drawable name="my_white13">#EFFFFFFF</drawable>
+    <!-- 白色 -->
+    <drawable name="my_white">#FFFFFFFF</drawable>
+
+
+    <color name="white_p">#D5D5D5</color>
+
+    <color name="background_title">#FFFFFF</color>
+    <color name="background_title_p">#00336A</color>
+    <color name="bg_tab_n">#DFDFDF</color>
+    <color name="bg_tab_c">#3E78B7</color>
+    <color name="buy_bg">#ffbc6d</color>
+
+    <color name="pay">#ff000000</color>
+
+
+    <!-- 零食网 -->
+    <color name="base_color">#ea546b</color>
+    <color name="base_color_gray">#323232</color>
+    <color name="index_et_bg">#70D5E7CD</color>
+    <color name="index_et_hint_color">#f0d0d4</color>
+    <color name="index_search_bg">#3FA601</color>
+    <color name="index_search_bg_p">#803FA601</color>
+    <color name="base_bg_color">#EAEAEA</color>
+    <color name="base_bg_color_2">#e4e3e3</color>
+    <color name="blue_limit">#89b4eb</color>
+    <color name="txt_color">#2e2e2e</color>
+    <color name="limit_item_bg_color">#f6f6f6</color>
+    <color name="divider_color">#e0e0e0</color>
+    <color name="label_shape_color">#f5b2b2</color>
+    <color name="label_txt_color">#2f2f2f</color>
+    <color name="limit_bg_color">#3b3b3b</color>
+    <color name="limit_header_color">#eeeeee</color>
+    <color name="white_n">#ffffff</color>
+    <color name="goods_gray">#969696</color>
+    <color name="border_gray">#e1e1e1</color>
+    <color name="yellow">#ff9933</color>
+    <color name="add_cart_p">#fa8984</color>
+    <color name="add_cart">#fb9d99</color>
+    <color name="time_bg">#787878</color>
+    <color name="time_block_bg">#434343</color>
+    <color name="time_hint_color">#616161</color>
+
+    <color name="line_color">#ECECEC</color>
+
+    <color name="color_gaga">#3FA601</color>
+
+
+    <color name="gouwu">#41A507</color>
+    <color name="my_red">#C20001</color>
+
+    <color name="cl_202020">#202020</color>
+    <color name="cl_96999f">#96999f</color>
+    <color name="cl_101217">#101217</color>
+    <color name="cl_cfcfcf">#cfcfcf</color>
+    <color name="cl_fe8181">#fe8181</color>
+    <color name="cl_828181">#828181</color>
+    <color name="cl_666464">#666464</color>
+    <color name="cl_a1a0a0">#a1a0a0</color>
+    <color name="cl_3ea600">#3ea600</color>
+    <color name="cl_888686">#888686</color>
+
+</resources>
+
+

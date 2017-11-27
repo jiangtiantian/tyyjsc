@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/bar_reg"
+        layout="@layout/bar_layout" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:src="@color/line_color"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_bank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_bank_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="银行卡账号"
+            android:textColor="@color/cl_202020"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:id="@+id/img_triangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/index_toright"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true" />
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/img_triangle"
+            android:layout_toRightOf="@id/tv_bank_no"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_bank_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textColor="@color/cl_202020"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tv_bank_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textColor="@color/cl_96999f"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tv_bank_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/cl_96999f"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:src="@color/line_color"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginTop="10dp"
+        android:src="@color/line_color" />
+
+
+    <!--钱包余额-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:text="钱包余额"
+                android:textColor="@color/cl_96999f"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tv_feeaccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="0元"
+                android:textColor="@color/cl_101217"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginLeft="15dp"
+            android:src="@color/line_color" />
+
+        <EditText
+            android:id="@+id/edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@color/transparent"
+            android:inputType="numberDecimal"
+            android:hint="输入提现金额"
+            android:textColorHint="@color/cl_cfcfcf"
+            android:textSize="16sp"
+            android:textColor="@color/cl_101217"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginLeft="15dp"
+            android:src="@color/line_color" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="(注：提现金额是100的整数倍)"
+            android:textColor="@color/cl_fe8181"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:src="@color/line_color" />
+
+
+    <TextView
+        android:id="@+id/bt_submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/dialog_btn_selector"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:gravity="center"/>
+
+</LinearLayout>

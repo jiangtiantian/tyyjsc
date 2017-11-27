@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="banner" type="id"/>
+    <item name="type" type="id"/>
+    <item name="label" type="id"/>
+    <item name="type1" type="id"/>
+    <item name="limittime" type="id"/>
+    <item name="recommendgood" type="id"/>
+
+    <item name="edit" type="id"/>
+    <item name="del" type="id"/>
+    <item name="def" type="id"/>
+    <item name="select" type="id"/>
+    <item name="kind0" type="id"></item>
+    <item name="kind1" type="id"></item>
+    <item name="kind2" type="id"></item>
+    <item name="button" type="id"></item>
+</resources>

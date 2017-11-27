@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_layout" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:src="@color/line_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout_shop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_shop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="邀请的好友"
+                android:textColor="@color/color_gaga"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:id="@+id/img_shop"
+                android:layout_width="70dp"
+                android:layout_height="2dp"
+                android:src="@color/color_gaga"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_service"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_service"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="朋友圈"
+                android:textColor="@color/cl_828181"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:id="@+id/img_service"
+                android:layout_width="70dp"
+                android:layout_height="2dp"
+                android:visibility="invisible"
+                android:src="@color/color_gaga"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout_friends"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/mine_bg"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_person_count_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="45dp"
+                        android:text="人数"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_person_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/tv_person_count_name"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="45dp"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="26sp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#418328" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/mine_bg"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_money_count_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="45dp"
+                        android:text="贡献兑换金总额"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_money_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/tv_money_count_name"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="45dp"
+                        android:textStyle="bold"
+                        android:text="￥0"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout
+                android:id="@+id/refreshLoadmoreLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <xtom.frame.view.XtomListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="@color/transparent"
+                    android:divider="@color/transparent"
+                    android:listSelector="@color/transparent"
+                    android:scrollbars="none" />
+            </com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/layout_circle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/mine_bg"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_team_count_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="45dp"
+                        android:text="团队总人数"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_team_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/tv_team_count_name"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="45dp"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="26sp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#418328" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/mine_bg"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_total_money_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="45dp"
+                        android:text="消费总金额"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_total_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/tv_total_money_name"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="45dp"
+                        android:textStyle="bold"
+                        android:text="￥0"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/background"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
