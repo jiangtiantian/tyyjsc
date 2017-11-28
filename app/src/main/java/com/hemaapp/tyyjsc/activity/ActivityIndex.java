@@ -55,20 +55,6 @@ public class ActivityIndex extends BaseFragmentActivity {
         startGeTuiPush();
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        setIntent(intent);
-        which = getIntent().getStringExtra("which");
-        if ("3".equals(which)) {
-            ((RadioButton) group.getChildAt(3)).setChecked(true);
-        } else if("2".equals(which)){
-            ((RadioButton) group.getChildAt(2)).setChecked(true);
-        }else{
-            toogleFragment(FragmentIndex.class);
-        }
-        super.onNewIntent(intent);
-    }
-
     public void change(){
         toogleFragment(FragmentMember.class);
         group.check(R.id.member);
@@ -89,6 +75,7 @@ public class ActivityIndex extends BaseFragmentActivity {
             pushReceiver = new PushReceiver();
             IntentFilter mFilter = new IntentFilter("com.hemaapp.push.connect");
             mFilter.addAction("com.hemaapp.push.msg");
+            mFilter.addAction("com.hemaapp.tyyjsc.shopcart");
             registerReceiver(pushReceiver, mFilter);
         }
     }
@@ -123,6 +110,9 @@ public class ActivityIndex extends BaseFragmentActivity {
                 } else {
                     log_i("无未读推送");
                 }
+            } else if("com.hemaapp.tyyjsc.shopcart".equals(action)){
+                toogleFragment(FragmentCart.class);
+                group.check(R.id.cart);
             }
         }
     }

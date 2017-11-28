@@ -558,8 +558,10 @@ public class ActivityTejiaGoodsInfo extends BaseActivity implements View.OnClick
             startActivity(intent);
         } else {
             Intent intent = new Intent(mContext, ActivityIndex.class);
-            intent.putExtra("which", "3");
             startActivity(intent);
+            Intent it = new Intent();
+            it.setAction("com.hemaapp.tyyjsc.shopcart");
+            sendBroadcast(it);
         }
     }
 

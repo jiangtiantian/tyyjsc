@@ -85,7 +85,6 @@ import xtom.frame.util.XtomToastUtil;
 
 import static com.hemaapp.tyyjsc.R.id.image_right;
 import static com.hemaapp.tyyjsc.R.id.refreshLoadmoreLayout;
-import static com.hemaapp.tyyjsc.R.id.tv_money_count_name;
 
 /**
  * 首页
@@ -872,11 +871,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener 
                 startActivityForResult(intent, 4);
                 break;
             case R.id.tv_member_more:
-                intent = new Intent(getActivity(), ActivityIndex.class);
-                intent.putExtra("which", "2");
-                startActivity(intent);
-                break;
-            default:
+                ((ActivityIndex) getActivity()).change();
                 break;
         }
     }

@@ -126,7 +126,7 @@ public class ActivityIndexSearch extends BaseActivity implements View.OnClickLis
             keywordET.setText("");
             // 保存搜索项
             searchDBClient.insert(keyWord, "1");
-            Intent intent = new Intent(ActivityIndexSearch.this, ActivitySearchResult.class);
+            Intent intent = new Intent(mContext, ActivitySearchResult.class);
             intent.putExtra("keytype","8");
             intent.putExtra("name", keyWord);
             startActivity(intent);
@@ -220,7 +220,7 @@ public class ActivityIndexSearch extends BaseActivity implements View.OnClickLis
     public void onClick(View v) {//标签跳转
         LabelInfo labelInfo = (LabelInfo)v.getTag();
         if(labelInfo != null){
-            Intent intent = new Intent(ActivityIndexSearch.this, ActivitySearchResult.class);
+            Intent intent = new Intent(mContext, ActivitySearchResult.class);
             intent.putExtra("id", labelInfo.getId());
             intent.putExtra("keytype","8");
             intent.putExtra("name", labelInfo.getKeyword());

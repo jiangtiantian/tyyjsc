@@ -19,7 +19,12 @@
         <xtom.frame.view.XtomListView
             android:id="@+id/listview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@color/xian"
+            android:dividerHeight="0.8dp"
+            android:scrollbars="none"
+            android:listSelector="@color/transparent" />
 
     </com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout>
 </LinearLayout>
