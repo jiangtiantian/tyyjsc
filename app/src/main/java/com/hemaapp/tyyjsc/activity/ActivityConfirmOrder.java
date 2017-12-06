@@ -148,7 +148,6 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
 
     //获取运费
     public void getExpressFee(String address, String shopid, String allweight) {
-
         getNetWorker().getExpressFee(user.getToken(), address, shopid, allweight);
     }
 
@@ -213,7 +212,10 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                 if (!isNull(address_id))
                     chargeNumAndTotalMoney();
                 break;
-            default:
+            case R.id.layout_bank:
+                log_e("-------------------------");
+                setResult(RESULT_OK, mIntent);
+                finish();
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
@@ -247,7 +249,13 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
             Map.Entry entry = (Map.Entry) iter.next();
             String key = (String) entry.getKey();
             tempMoney = Double.parseDouble((String) entry.getValue());
-            double sendfee = Double.parseDouble(isNull(hashExpressFee.get(key).getShipment()) ? "0.00" : hashExpressFee.get(key).getShipment());
+            double sendfee;
+            //add by  Torres 判空处理
+            if(hashExpressFee.size()!=0){
+                sendfee = Double.parseDouble(isNull(hashExpressFee.get(key).getShipment()) ? "0.00" : hashExpressFee.get(key).getShipment());
+            }else{
+                sendfee=0.00;
+            }
             double start_price = 0.00;
             int position = 0;
             if (data != null && data.size() > 0) {
@@ -259,7 +267,6 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                     }
                 }
             }
-
             if (XtomBaseUtil.isNull(data.get(position).getByprice())) {
                 money = money + tempMoney + sendfee;
             } else {
@@ -269,7 +276,6 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                     money = money + tempMoney;
             }
         }
-
         if (deliverFeeView.isChecked()) {
             Double scorefee = Double.parseDouble(isNull(scoreString) ?
                     "0.00" : scoreString) * Double.parseDouble(isNull(user.getDxmoney()) ? "0.00" : user.getDxmoney());
@@ -487,16 +493,19 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                 getcount++;
                 String shopid = hemaNetTask.getParams().get("shopid");
                 HemaArrayResult<SignValueInfo> result = (HemaArrayResult<SignValueInfo>) hemaBaseResult;
+                //error ：此处返回的数据大小为0
+                if(result.getObjects().size()!=0){
 
-                SignValueInfo fees = result.getObjects().get(0);
-                if ("5".equals(keytype)) {
-                    fees.setShipment("0");
-                }
-                hashExpressFee.put(shopid, fees);
-                if (cout == getcount) {
-                    freshData();
-                    initScoreExPanel();
-                    chargeNumAndTotalMoney();
+                    SignValueInfo fees = result.getObjects().get(0);
+                    if ("5".equals(keytype)) {
+                        fees.setShipment("0");
+                    }
+                    hashExpressFee.put(shopid, fees);
+                    if (cout == getcount) {
+                        freshData();
+                        initScoreExPanel();
+                        chargeNumAndTotalMoney();
+                    }
                 }
                 break;
             case CLIENT_GET:
@@ -517,9 +526,13 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                 intent.setAction(BaseConfig.BROADCAST_CART);
                 sendBroadcast(intent);
                 HemaArrayResult<IdInfo> orderAddResult = (HemaArrayResult<IdInfo>) hemaBaseResult;
+
                 if (orderAddResult.getObjects() != null) {
                     IdInfo idInfo = orderAddResult.getObjects().get(0);
                     order_id = idInfo.getOrderid();
+                    if(isNull(actual_pay_money)){
+                        chargeNumAndTotalMoney();
+                    }
                     hmBarNameView.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -528,8 +541,7 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                             it.putExtra("money", actual_pay_money);//剩余支付金额
                             it.putExtra("order_id", order_id);
                             it.putExtra("from", "4");
-                            startActivity(it);
-                            finish();
+                            startActivityForResult(it, R.id.layout_bank);
                         }
                     }, 500);
                 }
@@ -548,8 +560,7 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                             it.putExtra("money", actual_pay_money);//剩余支付金额
                             it.putExtra("order_id", order_id);
                             it.putExtra("from", "4");
-                            startActivity(it);
-                            finish();
+                            startActivityForResult(it, R.id.layout_bank);
                         }
                     }, 500);
                 }
@@ -562,13 +573,17 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                     hmBarNameView.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+                            // added  by torres 如果没有选择优惠组合的话  判断actual_pay_money是不是空 是空的话 将商品原价格传递过去
+
+                            if(isNull(actual_pay_money)){
+                                chargeNumAndTotalMoney();
+                            }
                             Intent it = new Intent(mContext, ActivityPay.class);
                             it.putExtra("keytype", "2");
                             it.putExtra("money", actual_pay_money);//剩余支付金额
                             it.putExtra("order_id", order_id);
                             it.putExtra("from", "4");
-                            startActivity(it);
-                            finish();
+                            startActivityForResult(it, R.id.layout_bank);
                         }
                     }, 500);
                 }
@@ -622,14 +637,12 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                 Intent intent = new Intent(mContext, ActivitySetPayPwd.class);
                 startActivity(intent);
             }
-
             @Override
             public void onGetPwd() {
                 Intent intent = new Intent(mContext, ActivitySetPayPwd.class);
                 startActivity(intent);
             }
         });
-
         dialog.setListener(new HmHelpDialog.OnCancelOrConfirmListener() {
             @Override
             public void onCancel(int type) {

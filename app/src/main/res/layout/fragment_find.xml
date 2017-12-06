@@ -73,6 +73,7 @@
             android:background="@color/sort_bg_white"
             android:divider="@null"
             android:scrollbars="none"/>
+
         <com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout
             android:id="@+id/goodsrefresh"
             android:layout_width="0dp"

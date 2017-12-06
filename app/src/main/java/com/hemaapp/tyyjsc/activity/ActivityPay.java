@@ -367,10 +367,12 @@ public class ActivityPay extends BaseActivity implements View.OnClickListener {
                     sendBroadCast();
                 } else {//确认订单
                     //nothing
+
                 }
                 hmBarNameView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        setResult(RESULT_OK, mIntent);
                         finish();
                     }
                 }, 500);
@@ -417,8 +419,6 @@ public class ActivityPay extends BaseActivity implements View.OnClickListener {
             PayTask alipay = new PayTask(ActivityPay.this);
             // 调用支付接口，获取支付结果
             String result = alipay.pay(orderInfo);
-
-            log_i("result = " + result);
             Message msg = new Message();
             msg.obj = result;
             alipayHandler.sendMessage(msg);
@@ -468,6 +468,9 @@ public class ActivityPay extends BaseActivity implements View.OnClickListener {
                             sendBroadCast();
                         }
                     }
+
+                    setResult(activity.RESULT_OK, activity.mIntent);
+                    activity.finish();
                     break;
                 default:
                     showTextDialog("支付取消");
@@ -813,7 +816,8 @@ public class ActivityPay extends BaseActivity implements View.OnClickListener {
             hmBarNameView.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                   finish();
+                    setResult(RESULT_OK, mIntent);
+                    finish();
                 }
             }, 500);
         } else if ("-1".equals(wx)) {

@@ -53,7 +53,7 @@ import xtom.frame.view.XtomRefreshLoadmoreLayout;
 /**
  * 购物车
  */
-public class FragmentCart extends BaseFragment implements OnClickListener,CartGoodAdapter.onDealChildClickListener{
+public class FragmentCart extends BaseFragment implements OnClickListener, CartGoodAdapter.onDealChildClickListener {
     private final static long hourLevelValue = 60 * 60 * 1000;
     private final static long minuteLevelValue = 60 * 1000;
     private final static long secondLevelValue = 1000;
@@ -63,7 +63,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
     private ArrayList<CartGoodsInfo> showDatas = new ArrayList<>();//获取所有的商品
     private ArrayList<CartGoodsInfo> selecedArr = new ArrayList<>();//
     private ArrayList<CartGoodsInfo> tempSelecedArr = new ArrayList<>();//
-    private HashMap<Integer,ArrayList<CartGoodsInfo>>conformlist=new HashMap<>();
+    private HashMap<Integer, ArrayList<CartGoodsInfo>> conformlist = new HashMap<>();
     private CartGoodAdapter cartgoodAdapter = null;
     private RefreshLoadmoreLayout layout = null;
     private RelativeLayout emptyLayout = null;
@@ -76,7 +76,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
     private CheckBox allBox = null;//全选
     private HmHelpDialog hmHelpDialog = null;
     private HmHelpDialog hmHelpDialog1 = null;
-    private TextView clickCart,limitCart;
+    private TextView clickCart, limitCart;
     private User user = null;//个人信息
     private LoginInfoReceiver loginInfoReceiver = null;//处理用户登录成功后发送的信息广播
     private FrameLayout remainTimeLayout = null;//剩余有效时间
@@ -88,11 +88,10 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
     private TextView timeViewM = null;//分
     private TextView timeViewS = null;//秒
     private View selector;
-    private String type="1";//1：购物车 2：购物清单
+    private String type = "1";//1：购物车 2：购物清单
     private ImageView Tabview = null;
-    private int getleft=0;//tab距离父布局的距离，便于计算动画距离
+    private int getleft = 0;//tab距离父布局的距离，便于计算动画距离
     private CountDownTimer countDownTimer = null;//计时器
-
 
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -106,8 +105,8 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
         getActivity().registerReceiver(loginInfoReceiver, intentFilter);
         DisplayMetrics dm = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
-        offset =BaseUtil.dip2px(getActivity(),210)/2;//初始化滑动动画的大小
-        getleft=(dm.widthPixels-BaseUtil.dip2px(getActivity(),210))/2;
+        offset = BaseUtil.dip2px(getActivity(), 210) / 2;//初始化滑动动画的大小
+        getleft = (dm.widthPixels - BaseUtil.dip2px(getActivity(), 210)) / 2;
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 offset, LinearLayout.LayoutParams.MATCH_PARENT);
         Tabview.setLayoutParams(params);
@@ -156,7 +155,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
             startActivity(intent);
             return;
         }
-        getNetWorker().getCartGoodsList(user.getToken(),type);
+        getNetWorker().getCartGoodsList(user.getToken(), type);
     }
 
     //购物车操作
@@ -173,6 +172,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
     public void freshData() {
         freshCartData();
     }
+
     //倒计时
     public void countTimer(ShopCart info) {
         String endTime = "";//结束时间
@@ -189,8 +189,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
         if (countDownTimer != null) {
             countDownTimer.cancel();
         }
-        if(endDate!=null)
-        {
+        if (endDate != null) {
             period = (endDate.getTime() - serviceDate.getTime()) <= 0 ? 0 : (endDate.getTime() - serviceDate.getTime());
             countDownTimer = new CountDownTimer(period, 1000) {
                 @Override
@@ -198,20 +197,22 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
                     period -= 1000;
                     getDifference(period, timeViewH, timeViewM, timeViewS);
                 }
+
                 @Override
                 public void onFinish() {
-                   // remainTimeLayout.setVisibility(View.GONE);
+                    // remainTimeLayout.setVisibility(View.GONE);
 //                    showDatas.clear();
-                   // cartgoodAdapter.notifyDataSetChanged();
+                    // cartgoodAdapter.notifyDataSetChanged();
                 }
             }.start();
         }
 
     }
+
     //刷新购物车数据
     public void freshCartData() {
         if (cartgoodAdapter == null) {
-            cartgoodAdapter = new CartGoodAdapter(getActivity(),showDatas,listView);
+            cartgoodAdapter = new CartGoodAdapter(getActivity(), showDatas, listView);
             cartgoodAdapter.setListener(this);
             cartgoodAdapter.setEmptyString("马上去购物");
             listView.setAdapter(cartgoodAdapter);
@@ -293,14 +294,10 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
                 for (ShopCart cart : nResult.getObjects()) {
                     showDatas.addAll(cart.getGoods());
                 }
-                if("2".equals(type))
-                {
-                    if("2".equals(type))
-                    {
-                        if(nResult.getObjects().size()!=0) {
-                            remainTimeLayout.setVisibility(View.VISIBLE);
-                            countTimer(nResult.getObjects().get(0));
-                        }
+                if ("2".equals(type)) {
+                    if (nResult.getObjects().size() != 0) {
+                        remainTimeLayout.setVisibility(View.VISIBLE);
+                        countTimer(nResult.getObjects().get(0));
                     }
                 }
                 freshData();
@@ -323,7 +320,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
         switch (information) {
             case CART_LIST:
             case CART_OPERATE:
-               showTextDialog(hemaBaseResult.getMsg());
+                showTextDialog(hemaBaseResult.getMsg());
                 break;
             default:
                 break;
@@ -350,12 +347,12 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
         hmRightTxtView = (TextView) findViewById(R.id.bar_right_txt);
         hmRightTxtView.setVisibility(View.VISIBLE);
         hmRightTxtView.setText("清空");
-        selector=findViewById(R.id.selector);
-        cartListLayout = (RelativeLayout)findViewById(R.id.cart_list_rl);
+        selector = findViewById(R.id.selector);
+        cartListLayout = (RelativeLayout) findViewById(R.id.cart_list_rl);
         listView = (ListView) findViewById(R.id.cart_list);
-        clickCart= (TextView) findViewById(R.id.cart);
-        limitCart= (TextView) findViewById(R.id.limit_cart);
-        Tabview= (ImageView) findViewById(R.id.tab);
+        clickCart = (TextView) findViewById(R.id.cart);
+        limitCart = (TextView) findViewById(R.id.limit_cart);
+        Tabview = (ImageView) findViewById(R.id.tab);
         cart_clearing_btn = (Button) findViewById(R.id.cart_clearing_btn);
         cart_clearing_text = (TextView) findViewById(R.id.cart_clearing_text);
         goLoginBtn = (TextView) findViewById(R.id.go_login);
@@ -379,6 +376,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
             public void onStartRefresh(XtomRefreshLoadmoreLayout xtomRefreshLoadmoreLayout) {
                 getCartList(type);
             }
+
             @Override
             public void onStartLoadmore(XtomRefreshLoadmoreLayout xtomRefreshLoadmoreLayout) {
 
@@ -398,6 +396,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
     protected void lazyLoad() {
         //nothing
     }
+
     public void moveTabBar(final int arg0) {
         Animation animation = new TranslateAnimation(curPos * offset,
                 offset * arg0, 0, 0);
@@ -406,14 +405,15 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
         Tabview.startAnimation(animation);
         curPos = arg0;
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.cart:
-                    moveTabBar(0);
+                moveTabBar(0);
                 clickCart.setTextColor(getResources().getColor(R.color.white));
                 limitCart.setTextColor(getResources().getColor(R.color.black));
-                type="1";
+                type = "1";
                 remainTimeLayout.setVisibility(View.GONE);
                 getCartList(type);
                 break;
@@ -421,8 +421,8 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
                 clickCart.setTextColor(getResources().getColor(R.color.black));
                 limitCart.setTextColor(getResources().getColor(R.color.white));
                 remainTimeLayout.setVisibility(View.VISIBLE);
-                    moveTabBar(1);
-                type="2";
+                moveTabBar(1);
+                type = "2";
                 getCartList(type);
                 break;
             case R.id.bar_right_txt://清空
@@ -443,13 +443,13 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
                         hmHelpDialog.cancel();
                         String ids = "";
                         for (CartGoodsInfo info : showDatas) {
-                                ids += info.getId() + ",";
-                            }
+                            ids += info.getId() + ",";
+                        }
                         ids = ids.substring(0, ids.lastIndexOf(","));
-                        if("2".equals(type))
+                        if ("2".equals(type))
                             cartOperate("4", ids, "");//清空购物车
                         else
-                        cartOperate("3", ids, "");//清空购物车
+                            cartOperate("3", ids, "");//清空购物车
                     }
                 });
                 hmHelpDialog.show();
@@ -468,10 +468,10 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
                 boolean isExsit = false;
                 selecedArr = new ArrayList<>();
                 for (CartGoodsInfo info : showDatas) {
-                        if (info.isChecked()) { //存在被选中商品
-                            isExsit = true;
-                            selecedArr.add(info);
-                        }
+                    if (info.isChecked()) { //存在被选中商品
+                        isExsit = true;
+                        selecedArr.add(info);
+                    }
                 }
                 if (!isExsit) {
                     XtomToastUtil.showShortToast(getActivity(), "请选择商品");
@@ -521,18 +521,15 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
                             Intent it = new Intent(getActivity(), ActivityConfirmOrder.class);
                             it.putExtra("data", selecedArr);
                             it.putExtra("keytype", "2");//购物车提交订单
-                            startActivity(it);
+                            startActivityForResult(it, R.id.layout_bank);
                         }
                     });
                     hmHelpDialog.show();
                 } else {
-                    int cout=1;//计数有几个商家
-                    for(int i=0;i<selecedArr.size();i++)
-                    {
-                        if(i<selecedArr.size()-1)
-                        {
-                            if(!selecedArr.get(i).getShopid().equals(selecedArr.get(i+1).getShopid()))
-                            {
+                    int cout = 1;//计数有几个商家
+                    for (int i = 0; i < selecedArr.size(); i++) {
+                        if (i < selecedArr.size() - 1) {
+                            if (!selecedArr.get(i).getShopid().equals(selecedArr.get(i + 1).getShopid())) {
                                 cout++;
                             }
                         }
@@ -540,21 +537,34 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
                     }
                     Intent it = new Intent(getActivity(), ActivityConfirmOrder.class);
                     it.putExtra("data", selecedArr);
-                    it.putExtra("count",cout);
-                    it.putExtra("keytype",type);//购物车提交订单
-                    startActivity(it);
+                    it.putExtra("count", cout);
+                    it.putExtra("keytype", type);//购物车提交订单
+                    startActivityForResult(it, 1);
                 }
                 break;
             default:
                 break;
         }
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode != (-1))
+            return;
+        switch (requestCode){
+            case 1:
+                getCartList(type);
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     //处理全选
     public void isAllCheck(Boolean bool) {
-        for (CartGoodsInfo info:showDatas) {
-                    info.setChecked(bool);
-                    info.setSellerChecked(bool);
-            }
+        for (CartGoodsInfo info : showDatas) {
+            info.setChecked(bool);
+            info.setSellerChecked(bool);
+        }
         allBox.setChecked(bool);
         cartgoodAdapter.notifyDataSetChanged();
         chargeTotalFee();
@@ -571,6 +581,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
         checkStore(item.getShopid());
         cartgoodAdapter.notifyDataSetChanged();
     }
+
     /**
      * 判断该仓库下的商品是否已经全选
      */
@@ -593,6 +604,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
             allBox.setChecked(false);
         chargeTotalFee();
     }
+
     /**
      * 判断是否购物车中全部商品已经勾选
      */
@@ -609,9 +621,10 @@ public class FragmentCart extends BaseFragment implements OnClickListener,CartGo
         }
         chargeTotalFee();
     }
+
     //处理头部全选未选中的操作
     @Override
-    public void onheaderListener(String id,boolean bool) {
+    public void onheaderListener(String id, boolean bool) {
         for (CartGoodsInfo item : showDatas) {
             if (id.equals(item.getShopid())) {
                 item.setChecked(bool);

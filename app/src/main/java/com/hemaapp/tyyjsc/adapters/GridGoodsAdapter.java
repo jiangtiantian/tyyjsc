@@ -39,6 +39,7 @@ public class GridGoodsAdapter extends HemaAdapter implements View.OnClickListene
 
     public void setKeytype(String keytype) {
         this.keytype = keytype;
+        log_e("---------------- keytype = " + keytype);
     }
 
     public GridGoodsAdapter(Context mContext, ArrayList<GoodsBriefIntroduction> data, TimeInfo timeInfo, Boolean fromsort) {
@@ -166,6 +167,8 @@ public class GridGoodsAdapter extends HemaAdapter implements View.OnClickListene
             Intent it;
             switch (keytype){
                 case "1": //推荐商品
+                case "6": //普通分类商品
+                case "7"://特色分类商品 added by Torres
                     it = new Intent(mContext, ActivityTuijianGoodInfo.class);
                     it.putExtra("id", infors.getId());
                     mContext.startActivity(it);
@@ -190,7 +193,6 @@ public class GridGoodsAdapter extends HemaAdapter implements View.OnClickListene
                     it.putExtra("id", infors.getId());
                     mContext.startActivity(it);
                     break;
-
             }
         }
     }

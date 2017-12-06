@@ -15,12 +15,60 @@ public class UserDBHelper extends BaseDBHelper {
     String tableName = USER;
 
 
-    String columns = "token,id,username,password,paypassword,feeaccount,card_feeaccount,consumfee,score," +
-            "signdays,signscore,experience_value,recommend_code,nickname,sex,charindex,mobile,avatar," +
-            "avatarbig,onlineflag,validflag,vestflag,lastsigntime,lng,lat,deviceid,devicetype,chanelid," +
-            "lastlogintime,lastloginversion,thirdtype,thirduid,content,regdate,bankuser,bankname,bankcard," +
-            "bankaddress,alipay,is_sign,friendflag,qrcode, download,level,dxmoney, pointcoupon, convertmoney," +
-            "exchangemoney, invitenum, allconvertmoney, allinvitenum, allsalemoney, is_max";
+    String columns = "token," +
+            "id," +
+            "username," +
+            "password," +
+            "paypassword," +
+            "feeaccount," +
+            "card_feeaccount" +
+            ",consumfee," +
+            "score," +
+            "signdays," +
+            "signscore," +
+            "experience_value," +
+            "recommend_code," +
+            "nickname," +
+            "sex," +
+            "charindex," +
+            "mobile," +
+            "avatar," +
+            "avatarbig," +
+            "onlineflag," +
+            "validflag," +
+            "vestflag," +
+            "lastsigntime," +
+            "lng," +
+            "lat," +
+            "deviceid," +
+            "devicetype," +
+            "chanelid," +
+            "lastlogintime," +
+            "lastloginversion," +
+            "thirdtype," +
+            "thirduid," +
+            "content" +
+            ",regdate," +
+            "bankuser," +
+            "bankname," +
+            "bankcard," +
+            "bankaddress," +
+            "alipay," +
+            "is_sign," +
+            "friendflag" +
+            ",qrcode, " +
+            "download," +
+            "level," +
+            "dxmoney," +
+            " pointcoupon, " +
+            "convertmoney," +
+            "exchangemoney," +
+            " invitenum," +
+            " allconvertmoney," +
+            " allinvitenum, " +
+            "allsalemoney, " +
+            "is_max，" +
+            "pointcoupon_money";
 
     String updateColumns = "token=?,id=?,username=?,password=?,paypassword=?,feeaccount=?," +
             "card_feeaccount=?,consumfee=?,score=?,signdays=?,signscore=?,experience_value=?,  " +
@@ -30,7 +78,7 @@ public class UserDBHelper extends BaseDBHelper {
             "thirduid=?,  content=?,  regdate=?,  bankuser=?,  bankname=?,  bankcard=?, " +
             " bankaddress=?,  alipay=?,  is_sign=?,  friendflag=?, qrcode=?, download=?,level=?,dxmoney=?, " +
             "pointcoupon=?, convertmoney=?, exchangemoney=?, invitenum=?, allconvertmoney=?, allinvitenum=?, " +
-            "allsalemoney=?, is_max=? ";
+            "allsalemoney=?, is_max=? ，pointcoupon_money=?";
 
     /**
      * 实例化系统初始化信息数据库帮助类
@@ -54,13 +102,18 @@ public class UserDBHelper extends BaseDBHelper {
      *
      * @return 是否成功
      */
+
     public boolean insert(User user) {
         String sql = "insert into "
                 + tableName
                 + " ("
                 + columns
-                + ") values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
+                + ") values (?,?,?,?,?,?,?,?,?,?," +
+                            "?,?,?,?,?,?,?,?,?,?," +
+                            "?,?,?,?,?,?,?,?,?,?," +
+                            "?,?,?,?,?,?,?,?,?,?," +
+                            "?,?,?,?,?,?,?,?,?,?," +
+                            "?,?,?)";
         Object[] bindArgs = new Object[]{user.getToken(), user.getId(), user.getUsername(),
                 user.getPassword(), user.getPaypassword(), user.getFeeaccount(),
                 user.getDebitaccound(), user.getConsumfee(), user.getScore(),
@@ -77,7 +130,9 @@ public class UserDBHelper extends BaseDBHelper {
                 user.getBankaddress(), user.getAlipay(), user.getIs_Sign(),
                 user.getFriendflag(), user.getQrcode(), user.getDownload(), user.getLevel(), user.getDxmoney(),
                 user.getPointcoupon(), user.getConvertmoney(), user.getExchangemoney(), user.getInvitenum(),
-                user.getAllconvertmoney(), user.getAllinvitenum(), user.getAllsalemoney(), user.getIs_max()};
+                user.getAllconvertmoney(), user.getAllinvitenum(), user.getAllsalemoney(), user.getIs_max(),
+                user.getPointcoupon_money(),
+                };
 
         SQLiteDatabase db = getWritableDatabase();
         boolean success = true;
@@ -114,7 +169,9 @@ public class UserDBHelper extends BaseDBHelper {
                 user.getBankaddress(), user.getAlipay(), user.getIs_Sign(), user.getFriendflag(),
                 user.getQrcode(), user.getDownload(), user.getLevel(), user.getDxmoney(),
                 user.getPointcoupon(), user.getConvertmoney(), user.getExchangemoney(), user.getInvitenum(),
-                user.getAllconvertmoney(), user.getAllinvitenum(), user.getAllsalemoney(), user.getIs_max()};
+                user.getAllconvertmoney(), user.getAllinvitenum(), user.getAllsalemoney(), user.getIs_max(),
+                user.getPointcoupon_money(),
+                user.getPointcoupon()};
 
         SQLiteDatabase db = getWritableDatabase();
         boolean success = true;

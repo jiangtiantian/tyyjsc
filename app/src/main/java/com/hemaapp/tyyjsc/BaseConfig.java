@@ -8,7 +8,7 @@ public class BaseConfig {
     /**
      * 是否打印信息开关
      */
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
     /**
      * 是否启用友盟统计l
      */
@@ -17,10 +17,10 @@ public class BaseConfig {
      * 后台服务接口根路径
      */
     //测试的
-    public static final String SYS_ROOT = "http://124.128.23.74:8008/group13/hm_tyyjsc/";    //测试的
+//    public static final String SYS_ROOT = "http://124.128.23.74:8008/group13/hm_tyyjsc/";    //测试的
 
     //正式服务器地址
-//    public static final String SYS_ROOT = "http://139.129.109.220/hm_tyyjsc/";
+    public static final String SYS_ROOT = "http://139.129.109.220/hm_tyyjsc/";
     /**
      * 图片压缩的最大宽度.
      */

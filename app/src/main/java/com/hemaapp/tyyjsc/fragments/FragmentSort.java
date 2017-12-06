@@ -57,6 +57,7 @@ public class FragmentSort extends BaseFragment implements View.OnClickListener, 
     private String parent_id = "";//二级分类id
     private TextView subEmpty = null;
     private int Tabselected=1;
+
     //城市特色
     private TextView specialView = null;
     private RefreshLoadmoreLayout cityLayout = null;// 城市特色

@@ -30,7 +30,7 @@ import xtom.frame.util.XtomToastUtil;
 import xtom.frame.view.XtomRefreshLoadmoreLayout;
 
 /**
- * type = 1精品推荐, type = 2预售抢购, type = 4套餐专区
+ * type = 1精品推荐, type = 2预售抢购, type = 4套餐专区，
  */
 public class ActivityBookGoods extends BaseActivity implements View.OnClickListener {
     private final static long hourLevelValue = 60 * 60 * 1000;
@@ -259,8 +259,6 @@ public class ActivityBookGoods extends BaseActivity implements View.OnClickListe
                     }
                 }
                 freshData();
-                break;
-            default:
                 break;
         }
     }
