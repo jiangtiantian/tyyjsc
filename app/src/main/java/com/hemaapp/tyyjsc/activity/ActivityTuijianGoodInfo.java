@@ -54,12 +54,16 @@ import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
+import xtom.frame.image.load.XtomImageTask;
 import xtom.frame.util.XtomToastUtil;
 import xtom.frame.view.XtomRefreshLoadmoreLayout;
 
 import static com.hemaapp.tyyjsc.R.id.buy;
+import static com.hemaapp.tyyjsc.R.id.imageview;
 
 /**
  * Created by wangyuxia on 2017/9/5.
@@ -489,7 +493,14 @@ public class ActivityTuijianGoodInfo extends BaseActivity implements View.OnClic
             select_property.setText(attrs.get(0).getName());
         }
         //店铺的信息
-        ImageLoader.getInstance().displayImage(info.getShopimgurl(), item_img, BaseUtil.displayImageOption());
+//        ImageLoader.getInstance().displayImage(info.getShopimgurl(), item_img, BaseUtil.displayImageOption());
+        try {
+            URL url = new URL(info.getShopimgurl());
+            imageWorker.loadImage(new XtomImageTask(item_img, url, mContext));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         shop_name.setText(info.getShopname());
         shop_where.setText(info.getShopaddress());
         //图文详情
@@ -667,8 +678,10 @@ public class ActivityTuijianGoodInfo extends BaseActivity implements View.OnClic
                         double d = Double.parseDouble(weight);
                         double d1 = Double.parseDouble(num);
 
+                        int score = Integer.parseInt(isNull(info.getScore())? "0" : info.getScore());
+
                         CartGoodsInfo goodsInfo = new CartGoodsInfo("", info.getId(), info.getShopid(), info.getShopname(), info.getByprice(),
-                                info.getName(), path, price, num, spec_id, specs_name, info.getScore(), true, "", "", info.getCoupon(), "1",
+                                info.getName(), path, price, num, spec_id, specs_name, String.valueOf(score * d1), true, "", "", info.getCoupon(), "1",
                                 info.getWeight(), BaseUtil.get2double(d * d1));
                         goodsInfo.setGoodsprice(Double.parseDouble(price) * Double.parseDouble(num) + "");
                         goodsInfo.setGoodsid(info.getId());

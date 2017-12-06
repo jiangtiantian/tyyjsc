@@ -11,15 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hemaapp.hm_FrameWork.HemaAdapter;
+import com.hemaapp.tyyjsc.BaseActivity;
 import com.hemaapp.tyyjsc.BaseUtil;
 import com.hemaapp.tyyjsc.R;
 import com.hemaapp.tyyjsc.activity.ActivityTuijianGoodInfo;
 import com.hemaapp.tyyjsc.model.GoodsBriefIntroduction;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import xtom.frame.XtomActivityManager;
+import xtom.frame.image.load.XtomImageTask;
 
 /**
  * 猜你喜欢GridView适配器
@@ -84,6 +88,12 @@ public class GoodsGridViewAdapter extends HemaAdapter implements View.OnClickLis
                     .setImageResource(R.mipmap.hm_icon_def);
         } else {
             ImageLoader.getInstance().displayImage(infors.getImgurl(), viewHolderLimitGood.itemImgView, BaseUtil.displayImageOption());
+//            try {
+//                URL url = new URL(infors.getImgurl());
+//                ((BaseActivity)mContext).imageWorker.loadImage(new XtomImageTask(viewHolderLimitGood.itemImgView, url, mContext));
+//            } catch (MalformedURLException e) {
+//                e.printStackTrace();
+//            }
         }
         viewHolderLimitGood.itemNameView.setText(infors.getName());
         viewHolderLimitGood.itemPriceView.setText("¥" + infors.getPrice());

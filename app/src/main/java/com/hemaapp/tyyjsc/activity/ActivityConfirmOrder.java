@@ -213,7 +213,6 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                     chargeNumAndTotalMoney();
                 break;
             case R.id.layout_bank:
-                log_e("-------------------------");
                 setResult(RESULT_OK, mIntent);
                 finish();
                 break;
@@ -843,10 +842,10 @@ public class ActivityConfirmOrder extends BaseActivity implements View.OnClickLi
                     } else {
                         if (deliverFeeView.isChecked())
                             getNetWorker().orderAdd(user.getToken(), keytype, cart_id, addressInfo.getId(), vourcherInfo == null ? "" : vourcherInfo.getId(),
-                                    money + "", isScorePay ? String.valueOf(pay_score) : "1", memo);
+                                    money + "", isScorePay ? "1" : "3", memo);
                         else
                             getNetWorker().orderAdd(user.getToken(), keytype, cart_id, addressInfo.getId(), vourcherInfo == null ? "" : vourcherInfo.getId(),
-                                    money + "", isScorePay ? String.valueOf(pay_score) : vourcherInfo == null ? "3" : "2", memo);
+                                    money + "", isScorePay ? "1" : vourcherInfo == null ? "3" : "2", memo);
                     }
                 }
                 break;

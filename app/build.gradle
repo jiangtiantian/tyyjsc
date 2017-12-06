@@ -16,6 +16,10 @@ android {
                 GETUI_APP_KEY : "cZPNwbEYex62eGea56VxSA",
                 GETUI_APP_SECRET : "jwC6hs4v1XAaosYCY1wzk8"
         ]
+
+//        dexOptions {
+//            javaMaxHeapSize "4g"
+//        }
     }
 
     buildTypes {

@@ -179,6 +179,7 @@ public class ActivityBookGoods extends BaseActivity implements View.OnClickListe
                         getGoodList(keytype, "", "");
                         break;
                     case "6":
+                    case "7":
                         getGoodList(keytype, id, "");
                         break;
                 }
@@ -195,6 +196,7 @@ public class ActivityBookGoods extends BaseActivity implements View.OnClickListe
                         getGoodList(keytype, "", "");
                         break;
                     case "6":
+                    case "7":
                         getGoodList(keytype, id, "");
                         break;
                 }
