@@ -149,7 +149,7 @@ public class ActivityTejiaGoodsInfo extends BaseActivity implements View.OnClick
         getGoodsInfo();
         SysInitInfo initInfo = BaseApplication.getInstance().getSysInitInfo();
         String sys_plugins = initInfo.getSys_plugins();
-        sharesharepath = sys_plugins + "title_share/sdk.php?id=" + good_id + "&keytype=3";
+        sharesharepath = sys_plugins + "share/sdk.php?id=" + good_id + "&keytype=3";
         colImg.setVisibility(View.INVISIBLE);
         getGoodList("9", good_id, "");
     }

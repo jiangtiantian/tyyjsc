@@ -153,7 +153,7 @@ public class ActivityTuijianGoodInfo extends BaseActivity implements View.OnClic
         getGoodsInfo();
         SysInitInfo initInfo = BaseApplication.getInstance().getSysInitInfo();
         String sys_plugins = initInfo.getSys_plugins();
-        sharesharepath = sys_plugins + "title_share/sdk.php?id=" + good_id + "&keytype=1";
+        sharesharepath = sys_plugins + "share/sdk.php?id=" + good_id + "&keytype=1";
         colImg.setVisibility(View.VISIBLE);
         getGoodList("9", good_id, "");
     }
