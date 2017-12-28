@@ -22,6 +22,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:text="二级分类"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:textColor="#363636"
         android:textSize="@dimen/textsize_6" />
 
