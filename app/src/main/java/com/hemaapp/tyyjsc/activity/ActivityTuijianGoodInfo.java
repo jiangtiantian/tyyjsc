@@ -439,7 +439,7 @@ public class ActivityTuijianGoodInfo extends BaseActivity implements View.OnClic
             }
         }
         /**
-         * keytype:商品类型1普通商品；2限时抢购；3特价预订；4超值套餐；
+         * keytype:商品类型1普通商品；2限时抢购；3特价预订(一成购车)；4超值套餐；
          * 赠送代金券：1、2、3、4
          * 可用积分：1、3、4 限时抢购没有可用积分
          */
@@ -457,7 +457,7 @@ public class ActivityTuijianGoodInfo extends BaseActivity implements View.OnClic
         //已售
         goodsSaleNumView.setText(getString(R.string.hm_hlxs_txt_237) + info.getDisplaysales());
         /**
-         * 库存：限时抢购、特价预订、超值套餐有库存；其他类型没有库存
+         * 库存：限时抢购、特价预订(一成购车)、超值套餐有库存；其他类型没有库存
          */
         goodsStoreNumView.setVisibility(View.VISIBLE);
         goodsStoreNumView.setText(getString(R.string.hm_hlxs_txt_239) + info.getStock());
@@ -505,11 +505,11 @@ public class ActivityTuijianGoodInfo extends BaseActivity implements View.OnClic
         shop_where.setText(info.getShopaddress());
         //图文详情
         /**
-         * 1普通商品；2限时抢购；3特价预订；4超值套餐；
+         * 1普通商品；2限时抢购；3特价预订(一成购车)；4超值套餐；
          * 抢购商品：无猜你喜欢，存在WebView和评论列表
-         * 推荐商品、特价预订：存在猜你喜欢、WebView和评论列表
+         * 推荐商品、特价预订(一成购车)：存在猜你喜欢、WebView和评论列表
          * 超值套餐：无猜你喜欢，存在套餐列表、WebView和评论列表
-         * 特价预订：存在猜你喜欢
+         * 特价预订(一成购车)：存在猜你喜欢
          */
         String id = info.getId();
         path = BaseApplication.getInstance().getSysInitInfo().getSys_web_service() + "webview/parm/goods/id/" + id;
@@ -570,7 +570,7 @@ public class ActivityTuijianGoodInfo extends BaseActivity implements View.OnClic
             case R.id.bar_right_img:
                 showShare();
                 break;
-            case R.id.collection://收藏（特价预订限时抢购无收藏）
+            case R.id.collection://收藏（特价预订(一成购车)限时抢购无收藏）
                 toCollection();
                 break;
             case R.id.cart://查看购物车（限时抢购无查看购物车

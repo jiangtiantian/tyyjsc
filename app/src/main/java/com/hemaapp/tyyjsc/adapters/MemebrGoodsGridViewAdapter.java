@@ -25,7 +25,7 @@ import xtom.frame.XtomActivityManager;
 
 /**
  * 猜你喜欢GridView适配器
- * 会员专区的商品详情，猜你喜欢
+ * 会员专区(全款购车)的商品详情，猜你喜欢
  */
 public class MemebrGoodsGridViewAdapter extends HemaAdapter implements View.OnClickListener {
 

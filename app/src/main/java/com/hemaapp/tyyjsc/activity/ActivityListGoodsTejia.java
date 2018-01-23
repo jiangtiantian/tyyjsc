@@ -25,7 +25,7 @@ import xtom.frame.util.XtomToastUtil;
 import xtom.frame.view.XtomRefreshLoadmoreLayout;
 
 /**
- * 特价预订
+ * 特价预订(一成购车)
  */
 public class ActivityListGoodsTejia extends BaseActivity implements View.OnClickListener {
 
@@ -81,7 +81,7 @@ public class ActivityListGoodsTejia extends BaseActivity implements View.OnClick
         emptyView = (TextView) findViewById(R.id.empty);
         //浮动按钮
         topView = (FrameLayout) findViewById(R.id.top);
-        hmBarNameView.setText("特价预定");
+        hmBarNameView.setText("一成购车");
     }
 
     @Override

@@ -117,7 +117,7 @@ public class TaoCanListAdapter extends HemaAdapter implements View.OnClickListen
         GoodsBriefIntroduction infors = (GoodsBriefIntroduction) v.getTag(R.id.banner);
         if (infors != null) {
             if (("1".equals(infors.getKeytype()) && "2".equals(infors.getIs_display())) || "2".equals(infors.getKeytype())
-                    || "3".equals(infors.getKeytype()) || ("4".equals(infors.getKeytype()) && "2".equals(infors.getIs_display()))) {//限时抢购和特价预订 已售罄时，禁止进去详情页
+                    || "3".equals(infors.getKeytype()) || ("4".equals(infors.getKeytype()) && "2".equals(infors.getIs_display()))) {//限时抢购和特价预订(一成购车) 已售罄时，禁止进去详情页
                 int stock = Integer.parseInt(("".equals(infors.getStock()) || ("null".equals(infors.getStock()))) ? "0" : infors.getStock());
                 if (stock <= 0) {
                     return;

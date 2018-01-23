@@ -100,7 +100,7 @@ public class GoodsGridViewAdapter extends HemaAdapter implements View.OnClickLis
         BaseUtil.setThroughSpan(viewHolderLimitGood.itemOldPriceView, "¥" + infors.getOld_price());
         viewHolderLimitGood.itemSaleNumView.setText("已售" + infors.getDisplaysales() + "件");
         /**
-         * 库存：限时抢购、特价预订、超值套餐有库存；其他类型没有库存
+         * 库存：限时抢购、特价预订(一成购车)、超值套餐有库存；其他类型没有库存
          */
         if (("1".equals(infors.getKeytype()) &&  "2".equals(infors.getIs_display())) ||"2".equals(infors.getKeytype()) ||
                 "3".equals(infors.getKeytype()) || ("4".equals(infors.getKeytype()) && "2".equals(infors.getIs_display()))) {

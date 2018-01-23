@@ -25,7 +25,7 @@ import xtom.frame.util.XtomToastUtil;
 import xtom.frame.view.XtomRefreshLoadmoreLayout;
 
 /**
- * 特价预订 超值套餐
+ * 特价预订(一成购车) 超值套餐
  */
 public class ActivitySearchResult extends BaseActivity implements View.OnClickListener {
     private ImageButton hmBackBtn = null;//返回
@@ -40,7 +40,7 @@ public class ActivitySearchResult extends BaseActivity implements View.OnClickLi
     private RefreshLoadmoreLayout layout = null;
     private FrameLayout topView = null;//滑动顶部按钮
     private MyScrollView sv = null;
-    private String keytype = "";//1：精品推荐 2:限时抢购 3：特价预定 4:套餐列表
+    private String keytype = "";//1：精品推荐 2:限时抢购 3：特价预定（一成购车） 4:套餐列表
     private String id;
     private String name;
     private Boolean fromsort = false;

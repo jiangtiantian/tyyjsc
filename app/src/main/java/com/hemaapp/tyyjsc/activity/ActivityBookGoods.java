@@ -30,7 +30,7 @@ import xtom.frame.util.XtomToastUtil;
 import xtom.frame.view.XtomRefreshLoadmoreLayout;
 
 /**
- * type = 1精品推荐, type = 2预售抢购, type = 4套餐专区，
+ * type = 1精品推荐, type = 2预售抢购（今日特价）, type = 4套餐专区，
  */
 public class ActivityBookGoods extends BaseActivity implements View.OnClickListener {
     private final static long hourLevelValue = 60 * 60 * 1000;
@@ -47,7 +47,7 @@ public class ActivityBookGoods extends BaseActivity implements View.OnClickListe
     private RefreshLoadmoreLayout layout = null;
     private FrameLayout topView = null;//滑动顶部按钮
     private MyScrollView sv = null;
-    private String keytype = "";//1：精品推荐 2:预售抢购
+    private String keytype = "";//1：精品推荐 2:预售抢购(今日特价)
     private String id;
     private String name;
     private Boolean fromsort = false;
@@ -98,12 +98,12 @@ public class ActivityBookGoods extends BaseActivity implements View.OnClickListe
                 getGoodList(keytype, "", "");
                 break;
             case "2":
-                hmBarNameView.setText("预售抢购");
+                hmBarNameView.setText("今日特价");
                 getGoodList(keytype, "", "");
                 timeLay.setVisibility(View.VISIBLE);
                 break;
             case "3":
-                hmBarNameView.setText("特价预定");
+                hmBarNameView.setText("一成购车");
                 getGoodList(keytype, "", "");
                 break;
             case "4":

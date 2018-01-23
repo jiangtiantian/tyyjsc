@@ -151,7 +151,7 @@ public class OrderListAdapter extends HemaAdapter {
 
             specNameView.setText(info.getPropertyname());
             goods_num.setText("×"+info.getBuycount());
-//        if ("3".equals(info.getKeytype())) {//特价预订 限时抢购
+//        if ("3".equals(info.getKeytype())) {//特价预订(一成购车) 限时抢购
 //            int stock = Integer.parseInt(isNull(info.getStock()) ? "0" : info.getStock());
 //            if (stock <= 0) {//已售罄
 //                holder.endFL.setVisibility(View.VISIBLE);

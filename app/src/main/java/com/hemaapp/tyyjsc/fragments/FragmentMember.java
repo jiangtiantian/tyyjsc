@@ -28,7 +28,7 @@ import xtom.frame.view.XtomRefreshLoadmoreLayout;
 
 
 /**
- * 会员专区
+ * 会员专区(全款购车)
  */
 
 public class FragmentMember extends BaseFragment  {
@@ -124,7 +124,7 @@ public class FragmentMember extends BaseFragment  {
         bar_name= (TextView) findViewById(R.id.bar_name);
         listview= (XtomListView) findViewById(R.id.listview);
 
-        bar_name.setText("会员专区");
+        bar_name.setText("全款购车");
         back_left.setVisibility(View.GONE);
         refresh_layout= (RefreshLoadmoreLayout) findViewById(R.id.refresh_layout);
 

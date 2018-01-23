@@ -109,9 +109,9 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener 
 
     private TextView tabLimitBuyView;//精品推荐
     private TextView tabValueBookView;//限时抢购
-    private TextView tabValueMealView;//特价预订
+    private TextView tabValueMealView;//特价预订(一成购车)
     private TextView tabSaveCardView; //超值套餐
-    private TextView tabMemberAir; //会员专区
+    private TextView tabMemberAir; //会员专区(全款购车)
 
     private ImageView yushou_ln;//限时抢购
 
@@ -164,7 +164,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener 
      * */
     private LinearLayout layout_tejia;
     private CityGridView grid_tejia;
-    private TextView tejia_ln;//特价预订
+    private TextView tejia_ln;//特价预订(一成购车)
 
     /**
      * 套餐商品UI
@@ -175,7 +175,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener 
     private LinearLayout layout_taocan;
 
     /**
-     * 会员专区UI
+     * 会员专区(全款购车)UI
      * */
     private LinearLayout layout_member;
     private CityGridView huiyuan_recycler;
@@ -808,7 +808,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener 
                 intent.putExtra("keytype", "1");
                 startActivity(intent);
                 break;
-            case R.id.tab_value_book: //预售抢购
+            case R.id.tab_value_book: //预售抢购(今日特价)
                 intent = new Intent(getActivity(), ActivityBookGoods.class);
                 intent.putExtra("keytype", "2");
                 startActivity(intent);
@@ -835,7 +835,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener 
                 break;
             case R.id.yushou_ln:
                 intent = new Intent(getActivity(), ActivityBookGoods.class);
-                intent.putExtra("keytype", "2"); //预售抢购
+                intent.putExtra("keytype", "2"); //预售抢购(今日特价)
                 startActivity(intent);
                 break;
             case R.id.tv_tejia_more:
@@ -847,7 +847,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener 
                 intent.putExtra("keytype", "4"); //套餐专区
                 startActivity(intent);
                 break;
-            case R.id.tab_member_area: //会员专区
+            case R.id.tab_member_area: //会员专区(全款购车)
                 ((ActivityIndex) getActivity()).change();
                 break;
             case R.id.top:

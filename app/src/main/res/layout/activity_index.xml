@@ -110,7 +110,7 @@
                 android:id="@+id/member"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="会员"
+                android:text="全款购车"
                 android:layout_weight="1.0"
                 android:button="@null"
                 android:background="@null"

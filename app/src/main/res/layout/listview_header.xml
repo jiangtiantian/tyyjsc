@@ -69,7 +69,7 @@
             android:drawablePadding="3dp"
             android:drawableTop="@mipmap/index_qianggou"
             android:gravity="center"
-            android:text="预售抢购"
+            android:text="今日特价"
             android:textColor="#686868"
             android:textSize="@dimen/textsize_6" />
 
@@ -81,7 +81,7 @@
             android:drawablePadding="3dp"
             android:drawableTop="@mipmap/index_top_yuding"
             android:gravity="center"
-            android:text="特价预定"
+            android:text="一成购车"
             android:textColor="#686868"
             android:textSize="@dimen/textsize_6" />
 
@@ -105,7 +105,7 @@
             android:drawablePadding="3dp"
             android:drawableTop="@mipmap/index_top_member"
             android:gravity="center"
-            android:text="会员专区"
+            android:text="全款购车"
             android:textColor="#686868"
             android:textSize="@dimen/textsize_6" />
     </LinearLayout>

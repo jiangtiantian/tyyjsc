@@ -477,10 +477,10 @@ public class FragmentCart extends BaseFragment implements OnClickListener, CartG
                     XtomToastUtil.showShortToast(getActivity(), "请选择商品");
                     return;
                 }
-                //判断特价预订是否存在库存不足商品
+                //判断特价预订(一成购车)是否存在库存不足商品
                 boolean isNoStockEnough = false;
                 for (CartGoodsInfo info : showDatas) {
-//                    if ("3".equals(info.getKeytype())) {//特价预订
+//                    if ("3".equals(info.getKeytype())) {//特价预订(一成购车)
 //                        int stock = Integer.parseInt(isNull(info.getBuycount()) ? "0" : info.getBuycount());
 //                        if (stock <= 0) {//已售罄
 //                            isNoStockEnough = true;
@@ -497,7 +497,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener, CartG
                 }
                 boolean ishasReserved = false;
                 for (CartGoodsInfo info : showDatas) {
-//                    if (info.isChecked() && "1".equals(info.getIs_reserved())) { //是否特价预订商品 	0否1是
+//                    if (info.isChecked() && "1".equals(info.getIs_reserved())) { //是否特价预订(一成购车)商品 	0否1是
 //                        ishasReserved = true;
 //                        break;
 //                    }
@@ -506,7 +506,7 @@ public class FragmentCart extends BaseFragment implements OnClickListener, CartG
                     if (hmHelpDialog == null) {
                         hmHelpDialog = new HmHelpDialog(getActivity(), 0);
                     }
-                    hmHelpDialog.setTitleName("购物车内存在特价预订商品\n如继续支付，则发货时间按特价预订时间");
+                    hmHelpDialog.setTitleName("购物车内存在一成购车商品\n如继续支付，则发货时间按一成购车时间");
                     hmHelpDialog.setLeftButtonText("取消");
                     hmHelpDialog.setRightButtonText("继续");
                     hmHelpDialog.setListener(new HmHelpDialog.OnCancelOrConfirmListener() {

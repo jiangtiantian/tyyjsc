@@ -168,7 +168,7 @@ public class CollectionAdapter extends HemaAdapter implements View.OnClickListen
                         it.putExtra("id", info.getGoodsid());
                         mContext.startActivity(it);
                         break;
-                    case "3": //会员专区
+                    case "3": //会员专区(全款购车)
                         it = new Intent(mContext, ActivityMemeberGoodsInfo.class);
                         it.putExtra("id", info.getGoodsid());
                         mContext.startActivity(it);

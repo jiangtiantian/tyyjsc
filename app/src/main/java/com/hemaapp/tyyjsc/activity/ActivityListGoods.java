@@ -26,7 +26,7 @@ import xtom.frame.view.XtomRefreshLoadmoreLayout;
 
 /**
  * 特价预订
- * keytype = 1:精品推荐,2:预售抢购,3:特价预定,4:套餐专区
+ * keytype = 1:精品推荐,2:预售抢购(今日特价),3:特价预定(一成购车),4:套餐专区
  */
 public class ActivityListGoods extends BaseActivity implements View.OnClickListener {
 
@@ -79,10 +79,10 @@ public class ActivityListGoods extends BaseActivity implements View.OnClickListe
                 hmBarNameView.setText("精品推荐");
                 break;
             case "2":
-                hmBarNameView.setText("预售抢购");
+                hmBarNameView.setText("今日特价");
                 break;
             case "3":
-                hmBarNameView.setText("特价预定");
+                hmBarNameView.setText("一成购车");
                 break;
             case "4":
                 hmBarNameView.setText("套餐专区");

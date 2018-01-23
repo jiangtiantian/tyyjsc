@@ -131,7 +131,8 @@ public class GridGoodsAdapter extends HemaAdapter implements View.OnClickListene
             viewHolderLimitGood.stock1.setText("库存"+infors.getStock());
         }
         if (-2 == status) {
-            if (("1".equals(infors.getKeytype()) &&  "2".equals(infors.getIs_display())) ||"2".equals(infors.getKeytype()) || "3".equals(infors.getKeytype()) || ("4".equals(infors.getKeytype()) && "2".equals(infors.getIs_display()))) {//特价预订 超值套餐
+            if (("1".equals(infors.getKeytype()) &&  "2".equals(infors.getIs_display())) ||"2".equals(infors.getKeytype()) || "3".equals(infors.getKeytype())
+                    || ("4".equals(infors.getKeytype()) && "2".equals(infors.getIs_display()))) {//特价预订(一成购车) 超值套餐
                 int stock = Integer.parseInt(isNull(infors.getStock()) ? "0" : infors.getStock());
                 if (stock <= 0) {//已售罄
                     viewHolderLimitGood.endFl.setVisibility(View.VISIBLE);
@@ -188,7 +189,7 @@ public class GridGoodsAdapter extends HemaAdapter implements View.OnClickListene
                     it.putExtra("id", infors.getId());
                     mContext.startActivity(it);
                     break;
-                case "5": //会员专区
+                case "5": //会员专区(全款购车)
                     it = new Intent(mContext, ActivityMemeberGoodsInfo.class);
                     it.putExtra("id", infors.getId());
                     mContext.startActivity(it);
