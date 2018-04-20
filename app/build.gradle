@@ -8,8 +8,8 @@ android {
         minSdkVersion 9
         targetSdkVersion 21
         multiDexEnabled true
-        versionCode 1190
-        versionName "1.1.9.0"
+        versionCode 1210
+        versionName "1.2.1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [
                 GETUI_APP_ID : "G2Oy2Y8I4z5OLLPzO5LTe6",

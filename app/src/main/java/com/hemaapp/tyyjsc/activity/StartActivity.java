@@ -3,6 +3,7 @@ package com.hemaapp.tyyjsc.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
@@ -36,7 +37,7 @@ import xtom.frame.util.XtomSharedPreferencesUtil;
 /**
  * 启动页
  */
-public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelListener, AMapLocationListener {
+public class StartActivity extends BaseActivity implements AMapLocationListener {
     // private CusImageView imageView;
     private CusImageView imageView;
     private SysInitInfo sysInitInfo;
@@ -53,17 +54,8 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_start);
         super.onCreate(savedInstanceState);
-
-
- /*  sysInitInfo =  BaseApplication.getInstance().getSysInitInfo();*/
-
-        // 软件升级
-        upGrade = new BaseUpGrade(mContext);
-        upGrade.setListener(this);
-
         startLocation();
         init();
-
     }
 
     private void startLocation() {
@@ -84,27 +76,36 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
 
     //初始化启动动画
     private void init() {
-//        setStartImage();
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.logo);
         animation.setAnimationListener(new StartAnimationListener());
         imageView.startAnimation(animation);
     }
 
+    private void checkUpdate(){
+        imageView.setVisibility(View.VISIBLE);
+        // 软件升级
+        upGrade = new BaseUpGrade(mContext) {
+
+            @Override
+            public void NoNeedUpdate() {
+                getNetWorker().adList("4");
+            }
+        };
+
+        String sysVersion = sysInitInfo.getAndroid_last_version();
+        String version = HemaUtil.getAppVersionForSever(mContext);
+        boolean isUpdate = HemaUtil.isNeedUpDate(version, sysVersion);
+
+        if (isUpdate) {
+            upGrade.alert(sysInitInfo);
+        }else{
+            getNetWorker().adList("4");
+        }
+    }
+
     //动态展示启动页图片
     private void setStartImage() {
         imageView.setImageResource(R.mipmap.first01);
-//        if (sysInitInfo != null)
-//            startImage = sysInitInfo.getStart_img();
-//        if (!isNull(startImage)) {
-//            URL url;
-//            try {
-//                url = new URL(startImage);
-//                ImageLoader.getInstance().displayImage(startImage, imageView, BaseUtil.displayImageOption(R.mipmap.first01));
-//            } catch (MalformedURLException e) {
-//                // 设置默认图片
-//                imageView.setImageResource(R.mipmap.first01);
-//            }
-//        }
     }
 
     private void toGuide() {
@@ -167,11 +168,6 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
     }
 
     @Override
-    public void cancel() {
-        toGuide();
-    }
-
-    @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
         if (aMapLocation != null && aMapLocation.getErrorCode() == 0) { //定位成功
             Double lat = aMapLocation.getLatitude();
@@ -209,6 +205,7 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
         public void onAnimationEnd(Animation animation) {
             BaseNetWorker netWorker = getNetWorker();
             netWorker.init();
+
         }
 
         @Override
@@ -240,8 +237,6 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
             case THIRD_SAVE:
                 showProgressDialog("请稍后");
                 break;
-            default:
-                break;
         }
     }
 
@@ -253,8 +248,6 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
             case CLIENT_LOGIN:
             case THIRD_SAVE:
                 cancelProgressDialog();
-                break;
-            default:
                 break;
         }
     }
@@ -268,15 +261,11 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
                 sysInitInfo = sResult.getObjects().get(0);
                 setStartImage();
                 BaseApplication.getInstance().setSysInitInfo(sysInitInfo);
-                getNetWorker().adList("4");
-                String sysVersion = sysInitInfo.getAndroid_last_version();
-                String version = HemaUtil.getAppVersionForSever(mContext);
-                if (HemaUtil.isNeedUpDate(version, sysVersion)) {
-                    upGrade.check();
+                if(sysInitInfo!=null){
+                    checkUpdate();
                 }
                 break;
             case CLIENT_LOGIN:
-                @SuppressWarnings("unchecked")
                 HemaArrayResult<User> uResult = (HemaArrayResult<User>) hemaBaseResult;
                 User user = uResult.getObjects().get(0);
                 BaseApplication.getInstance().setUser(user);
@@ -306,8 +295,6 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
         switch (information) {
             case INIT:
             case THIRD_SAVE:
-                //showToast(R.mipmap.ic_launcher, hemaBaseResult.getMsg());
-                break;
             case CLIENT_LOGIN:
                 XtomSharedPreferencesUtil.save(mContext, "username", "");
                 XtomSharedPreferencesUtil.save(mContext, "password", "");
@@ -327,8 +314,6 @@ public class StartActivity extends BaseActivity implements BaseUpGrade.onCancelL
             case THIRD_SAVE:
                 break;
             case CLIENT_LOGIN:
-                break;
-            default:
                 break;
         }
     }

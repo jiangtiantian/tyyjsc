@@ -11,22 +11,23 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import com.hemaapp.tyyjsc.R;
+import com.hemaapp.tyyjsc.activity.ActivityGuide;
+
 import xtom.frame.XtomActivity;
 
 /**
  * 引导页适配器
  */
 public class ShowAdapter extends PagerAdapter implements View.OnClickListener{
-    private XtomActivity mContext;
+    private ActivityGuide mContext;
     private int[] imgs;
     private View view;
     private RadioGroup mIndicator;
     private int size;
 
-    private onFinishListener listener = null;
 
     public ShowAdapter(Context mContext, int[] imgs, View view) {
-        this.mContext = (XtomActivity) mContext;
+        this.mContext = (ActivityGuide) mContext;
         this.imgs = imgs;
         this.view = view;
         init();
@@ -96,15 +97,7 @@ public class ShowAdapter extends PagerAdapter implements View.OnClickListener{
     public void onClick(View v) {
         int position = (int)v.getTag();
         if(imgs.length - 1== position){
-            if(listener != null){
-                listener.onFinish();
-            }
+            mContext.checkLogin();
         }
-    }
-    public void setListener(onFinishListener listener){
-        this.listener = listener;
-    }
-    public interface onFinishListener{
-        void onFinish();
     }
 }

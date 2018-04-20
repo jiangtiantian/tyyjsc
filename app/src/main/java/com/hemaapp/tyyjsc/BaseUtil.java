@@ -2,6 +2,7 @@ package com.hemaapp.tyyjsc;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.text.SpannableString;
 import android.text.style.StrikethroughSpan;
@@ -33,6 +34,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import xtom.frame.XtomActivityManager;
+import xtom.frame.util.XtomSharedPreferencesUtil;
 import xtom.frame.util.XtomTimeUtil;
 
 /**

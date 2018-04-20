@@ -20,10 +20,11 @@ import com.hemaapp.tyyjsc.adapters.ShowAdapter;
 import com.hemaapp.tyyjsc.model.User;
 
 import xtom.frame.util.XtomSharedPreferencesUtil;
+
 /**
  * 引导页
  */
-public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishListener {
+public class ActivityGuide extends BaseActivity {
     private ViewPager mViewPager;
     private RelativeLayout layout;
     private TextView start;
@@ -31,25 +32,28 @@ public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishL
     public boolean isAutomaticLogin = false;// 是否自动登录
     private User user;
     private int[] imgs = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_guide);
         super.onCreate(savedInstanceState);
-        imgs = new int[]{R.mipmap.banner01, R.mipmap.banner02,R.mipmap.banner03,R.mipmap.banner04};
+        imgs = new int[]{R.mipmap.banner01, R.mipmap.banner02, R.mipmap.banner03, R.mipmap.banner04};
         mAdapter = new ShowAdapter(mContext, imgs, layout);
         mViewPager.setAdapter(mAdapter);
-        mAdapter.setListener(this);
     }
+
     @Override
     protected void findView() {
         start = (TextView) findViewById(R.id.button);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         layout = (RelativeLayout) findViewById(R.id.layout);
     }
+
     @Override
     protected void getExras() {
 
     }
+
     @Override
     protected void setListener() {
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -84,8 +88,6 @@ public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishL
             case CLIENT_LOGIN:
                 showProgressDialog(R.string.hm_hlxs_txt_34);
                 break;
-            default:
-                break;
         }
     }
 
@@ -111,8 +113,6 @@ public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishL
                 BaseApplication.getInstance().setUser(user);
                 toMain();
                 break;
-            default:
-                break;
         }
     }
 
@@ -123,8 +123,6 @@ public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishL
             case CLIENT_LOGIN:
                 showTextDialog(hemaBaseResult.getMsg());
                 break;
-            default:
-                break;
         }
     }
 
@@ -133,16 +131,8 @@ public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishL
         BaseHttpInformation information = (BaseHttpInformation) hemaNetTask.getHttpInformation();
         switch (information) {
             case CLIENT_LOGIN:
-
-                break;
-            default:
                 break;
         }
-    }
-
-    @Override
-    protected boolean onKeyBack() {
-        return false;
     }
 
     @Override
@@ -150,8 +140,7 @@ public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishL
         return false;
     }
 
-    @Override
-    public void finish() {
+    public void checkLogin() {
         // 判断是否自动登录
         if (isAutoLogin()) {
             String username = XtomSharedPreferencesUtil.get(this, "username");
@@ -162,16 +151,14 @@ public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishL
             } else {
                 toMain();
             }
-        } else {
-            toMain();
         }
-        super.finish();
     }
 
     //进入首页
     private void toMain() {
         Intent it = new Intent(mContext, ActivityIndex.class);
         startActivity(it);
+        finish();
     }
 
     //标记已执行过引导页，下次初始化后直接进入首页
@@ -188,8 +175,4 @@ public class ActivityGuide extends BaseActivity implements ShowAdapter.onFinishL
         return !isAutomaticLogin;
     }
 
-    @Override
-    public void onFinish() {
-        finish();
-    }
 }

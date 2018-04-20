@@ -18,6 +18,7 @@ import com.hemaapp.tyyjsc.model.SysInitInfo;
 
 import java.io.File;
 
+import xtom.frame.XtomActivityManager;
 import xtom.frame.XtomObject;
 import xtom.frame.fileload.FileInfo;
 import xtom.frame.fileload.XtomFileDownLoader;
@@ -28,27 +29,18 @@ import xtom.frame.util.XtomToastUtil;
 /**
  * 软件升级
  */
-public class BaseUpGrade extends XtomObject {
+public abstract class BaseUpGrade extends XtomObject {
     private long checkTime = 0;
     private Context mContext;
     private String savePath;
     private BaseNetWorker netWorker;
     private SysInitInfo sysInitInfo;
 
-    private onCancelListener listener = null;
-
     public BaseUpGrade(Context mContext) {
         this.mContext = mContext;
         this.netWorker = new BaseNetWorker(mContext);
         this.netWorker.setOnTaskExecuteListener(new TaskExecuteListener(
                 mContext));
-    }
-
-    /**
-     * 设置监听
-     */
-    public void setListener(onCancelListener listener) {
-        this.listener = listener;
     }
 
     /**
@@ -77,58 +69,47 @@ public class BaseUpGrade extends XtomObject {
          */
         public TaskExecuteListener(Context context) {
             super(context);
-            // TODO Auto-generated constructor stub
         }
 
         @Override
         public void onPreExecute(HemaNetWorker netWorker, HemaNetTask netTask) {
-
         }
 
         @Override
         public void onPostExecute(HemaNetWorker netWorker, HemaNetTask netTask) {
-
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         public void onServerSuccess(HemaNetWorker netWorker,
                                     HemaNetTask netTask, HemaBaseResult baseResult) {
             checkTime = System.currentTimeMillis();
-            @SuppressWarnings("unchecked")
             HemaArrayResult<SysInitInfo> sResult = (HemaArrayResult<SysInitInfo>) baseResult;
             sysInitInfo = sResult.getObjects().get(0);
             String sysVersion = sysInitInfo.getAndroid_last_version();
             String version = HemaUtil.getAppVersionForSever(mContext);
             if (HemaUtil.isNeedUpDate(version, sysVersion)) {
-                alert(version, sysVersion);
-            } else {
-
+                alert(sysInitInfo);
             }
         }
 
         @Override
         public void onServerFailed(HemaNetWorker netWorker,
                                    HemaNetTask netTask, HemaBaseResult baseResult) {
-            BaseHttpInformation information = (BaseHttpInformation) netTask.getHttpInformation();
-            switch (information) {
-                case INIT:
-                    break;
-                default:
-                    break;
-            }
         }
 
         @Override
         public void onExecuteFailed(HemaNetWorker netWorker,
                                     HemaNetTask netTask, int failedType) {
         }
+
     }
 
-    public void alert(String curr, String server) {
+    public void alert(SysInitInfo infor) {
+        sysInitInfo = infor;
         Builder ab = new Builder(mContext);
         ab.setTitle("软件更新");
-        String message = "当前客户端版本是" + curr + ",服务器最新版本是" + server + ",确定要升级吗？";
-        ab.setMessage(message);
+        ab.setMessage("有最新的软件版本，是否升级？");
         ab.setPositiveButton("升级", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -140,14 +121,12 @@ public class BaseUpGrade extends XtomObject {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
                 if (isMust())
-                    BaseUtil.exit(mContext);
-                else {
-                    if (listener != null) {
-                        listener.cancel();
-                    }
-                }
+                    XtomActivityManager.finishAll();
+                else{
+                    NoNeedUpdate();
+                };
+                dialog.cancel();
             }
         });
         ab.setCancelable(false);
@@ -156,7 +135,7 @@ public class BaseUpGrade extends XtomObject {
 
     public void upGrade(SysInitInfo sysInitInfo) {
         String downPath = sysInitInfo.getAndroid_update_url();
-        savePath = XtomFileUtil.getFileDir(mContext) + "/apps/mmzzb_"
+        savePath = XtomFileUtil.getFileDir(mContext) + "/apps/hm_smsd_"
                 + sysInitInfo.getAndroid_last_version() + ".apk";
         XtomFileDownLoader downLoader = new XtomFileDownLoader(mContext,
                 downPath, savePath);
@@ -232,13 +211,8 @@ public class BaseUpGrade extends XtomObject {
             }
             XtomToastUtil.showShortToast(mContext, "下载停止");
             if (isMust())
-                BaseUtil.exit(mContext);
+                XtomActivityManager.finishAll();
         }
-
     }
-
-    // 取消回调
-    public interface onCancelListener {
-        void cancel();
-    }
+    public abstract void NoNeedUpdate();
 }

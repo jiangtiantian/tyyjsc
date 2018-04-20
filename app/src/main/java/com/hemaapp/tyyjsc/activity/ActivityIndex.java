@@ -1,5 +1,6 @@
 package com.hemaapp.tyyjsc.activity;
 
+import android.app.ActivityManager;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -30,6 +31,9 @@ import com.igexin.sdk.PushManager;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import xtom.frame.XtomActivity;
+import xtom.frame.XtomActivityManager;
 import xtom.frame.util.XtomToastUtil;
 
 
